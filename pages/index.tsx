@@ -46,7 +46,7 @@ export default function Home() {
             <span style={{ color: "#00B8FF" }}>Kickfixx</span> Vending & Supplies
           </h1>
           <p style={{ opacity: 0.9, margin: "0 0 18px" }}>
-            Smart, clean, and modern convenience. Branded Machine and
+            Smart, clean, and modern convenience. Branded Machines and
             premium products for busy locations.
           </p>
           <Link
