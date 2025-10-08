@@ -111,19 +111,11 @@ export default function Home() {
         text: "We install, restock, and maintain — so your space stays clean and stocked."
       }
     ].map((f, i) => (
-      <div
-        key={i}
-        style={{
-          background: "#111",
-          borderRadius: 16,
-          padding: 24,
-          border: "1px solid #1f2937",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
-        }}
-      >
-        <h3 style={{ color: "#00B8FF", marginBottom: 10 }}>{f.title}</h3>
-        <p style={{ opacity: 0.85 }}>{f.text}</p>
-      </div>
+      <div key={i} className="card">
+  <h3 style={{ color: "#00B8FF", marginBottom: 10 }}>{f.title}</h3>
+  <p style={{ opacity: 0.85 }}>{f.text}</p>
+</div>
+
     ))}
   </div>
 </section>
@@ -161,22 +153,12 @@ export default function Home() {
         tag: "Ideal for new or strategic locations"
       }
     ].map((o, i) => (
-      <div
-        key={i}
-        style={{
-          background: "#111",
-          borderRadius: 16,
-          padding: 24,
-          border: "1px solid #1f2937",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
-        }}
-      >
-        <h3 style={{ marginBottom: 8 }}>{o.title}</h3>
-        <p style={{ opacity: 0.85 }}>{o.desc}</p>
-        <p style={{ color: "#22C55E", fontWeight: 600, marginTop: 12 }}>
-          ✓ {o.tag}
-        </p>
-      </div>
+  <div key={i} className="card">
+  <h3 style={{ marginBottom: 8 }}>{o.title}</h3>
+  <p style={{ opacity: 0.85 }}>{o.desc}</p>
+  <p style={{ color: "#22C55E", fontWeight: 600, marginTop: 12 }}>✓ {o.tag}</p>
+</div>
+
     ))}
   </div>
 </section>
