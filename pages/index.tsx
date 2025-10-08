@@ -47,7 +47,7 @@ export default function Home() {
           </h1>
           <p style={{ opacity: 0.9, margin: "0 0 18px" }}>
             Smart, clean, and modern convenience. Custom merchandising and
-            premium cleaning products for busy locations.
+            premium products for busy locations.
           </p>
           <Link
             href="/contact"
