@@ -1,14 +1,8 @@
-# BB# Kickfixx Website
+# Kickfixx Website (Next.js + TypeScript)
 
-A clean, modern Next.js (TypeScript) website for Kickfixx — built for instant deployment on **Vercel**.
+Clean Next.js Pages Router project ready for Vercel.
 
----
-
-## 🚀 Quick Start
-
-1. **Clone this repo**
-   ```bash
-   git clone https://github.com/<your-username>/kickfixx.git
-   cd kickfixx
-   npm install
-   npm run dev
+## Quick Start
+```bash
+npm install
+npm run dev
