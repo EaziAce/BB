@@ -65,21 +65,26 @@ export default function Home() {
           </Link>
         </div>
 
-        <div>
-          <Image
-            src="/vending-mockup.png"
-            alt="Kickfixx vending machine mockup"
-            width={800}
-            height={520}
-            style={{
-              borderRadius: 16,
-              border: "1px solid #1f2937",
-              width: "100%",
-              height: "auto",
-            }}
-            priority
-          />
-        </div>
+    <div
+  style={{
+    position: "relative",
+    width: "100%",
+    aspectRatio: "3 / 2",          // adjust if you want taller/shorter
+    borderRadius: 16,
+    overflow: "hidden",
+    border: "1px solid #1f2937",
+    background: "#0A0A0A"
+  }}
+>
+  <Image
+    src="/vending-mockup.png"
+    alt="Kickfixx vending machine mockup"
+    fill
+    style={{ objectFit: "cover" }}  // zooms/crops away the white margins
+    priority
+  />
+</div>
+
       </section>
 
       {/* --- FEATURES SECTION --- */}
