@@ -82,7 +82,110 @@ export default function Home() {
         </div>
       </section>
 
-      <footer style={{ padding: "30px 0", borderTop: "1px solid #1f2937", opacity: 0.8, fontSize: 14 }}>
+      {/* --- FEATURES SECTION --- */}
+<section style={{ padding: "60px 0", background: "#0D0D0D" }}>
+  <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 40 }}>
+    Why Choose <span style={{ color: "#00B8FF" }}>Kickfixx</span>
+  </h2>
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gap: 24,
+      maxWidth: 1100,
+      margin: "0 auto",
+      textAlign: "center"
+    }}
+  >
+    {[
+      {
+        title: "Convenience",
+        text: "On-site access to energizing drinks & healthy snacks that boost productivity."
+      },
+      {
+        title: "Transparent Reporting",
+        text: "Simple monthly/quarterly sales summaries and flexible terms."
+      },
+      {
+        title: "Reliable Service",
+        text: "We install, restock, and maintain — so your space stays clean and stocked."
+      }
+    ].map((f, i) => (
+      <div
+        key={i}
+        style={{
+          background: "#111",
+          borderRadius: 16,
+          padding: 24,
+          border: "1px solid #1f2937",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
+        }}
+      >
+        <h3 style={{ color: "#00B8FF", marginBottom: 10 }}>{f.title}</h3>
+        <p style={{ opacity: 0.85 }}>{f.text}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+{/* --- PLACEMENT OPTIONS --- */}
+<section style={{ padding: "60px 0", maxWidth: 1100, margin: "0 auto" }}>
+  <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 10 }}>
+    Placement Options
+  </h2>
+  <p style={{ textAlign: "center", opacity: 0.8, marginBottom: 40 }}>
+    Choose what fits your property best. We’ll recommend based on traffic and goals.
+  </p>
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gap: 24
+    }}
+  >
+    {[
+      {
+        title: "Revenue Share",
+        desc: "Building receives a % of monthly gross sales.",
+        tag: "Great for medium–high traffic"
+      },
+      {
+        title: "Flat Fee",
+        desc: "Fixed monthly rent for the machine space.",
+        tag: "Predictable sites & budgets"
+      },
+      {
+        title: "No-Fee Trial",
+        desc: "Fast, low-friction placement to prove demand.",
+        tag: "Ideal for new or strategic locations"
+      }
+    ].map((o, i) => (
+      <div
+        key={i}
+        style={{
+          background: "#111",
+          borderRadius: 16,
+          padding: 24,
+          border: "1px solid #1f2937",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.2)"
+        }}
+      >
+        <h3 style={{ marginBottom: 8 }}>{o.title}</h3>
+        <p style={{ opacity: 0.85 }}>{o.desc}</p>
+        <p style={{ color: "#22C55E", fontWeight: 600, marginTop: 12 }}>
+          ✓ {o.tag}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+    
+
+      <footer style={{ marginTop: 60, padding: "30px 0", borderTop: "1px solid #1f2937", opacity: 0.8, fontSize: 14 }}>
+        
         © 2025 Kickfixx. All rights reserved.
       </footer>
     </div>
