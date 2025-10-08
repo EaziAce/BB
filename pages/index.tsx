@@ -81,10 +81,10 @@ export default function Home() {
   }}
 >
   <Image
-    src="/vending-mockup-transparent.png"
+    src="/vending-mockup.png"
     alt="Kickfixx vending machine mockup"
-    width={700}
-    height={900}
+    width={1000}
+    height={1300}
     style={{
       objectFit: "cover", // crops only a little of the white edge
       width: "100%",
