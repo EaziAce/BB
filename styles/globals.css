@@ -1,0 +1,8 @@
+:root{--kickfixx-blue:#00B8FF;--bg:#0A0A0A;--panel:#111;--text:#F5F7FA;--border:#1f2937}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter, system-ui, Arial, sans-serif;line-height:1.5}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+@media (max-width:900px){
+  section[style*="grid-template-columns"]{grid-template-columns:1fr !important}
+}
