@@ -68,22 +68,35 @@ export default function Home() {
     <div
   style={{
     position: "relative",
-    width: "100%",
-    aspectRatio: "3 / 2",          // adjust if you want taller/shorter
-    borderRadius: 16,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     overflow: "hidden",
-    border: "1px solid #1f2937",
-    background: "#0A0A0A"
+    borderRadius: 20,
+    margin: "40px auto",
+    maxWidth: 600,
+    background: "radial-gradient(circle at center, rgba(0,184,255,0.08) 0%, transparent 70%)",
+    boxShadow:
+      "0 8px 24px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 184, 255, 0.35)",
   }}
 >
   <Image
-    src="/vending-mockup.png"
+    src="/vending-mockup-transparent.png"
     alt="Kickfixx vending machine mockup"
-    fill
-    style={{ objectFit: "cover" }}  // zooms/crops away the white margins
+    width={700}
+    height={900}
+    style={{
+      objectFit: "cover", // crops only a little of the white edge
+      width: "100%",
+      height: "auto",
+      transform: "scale(1.05)", // small zoom to tighten framing
+      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    }}
+    className="vending-image"
     priority
   />
 </div>
+
 
       </section>
 
