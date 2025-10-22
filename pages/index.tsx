@@ -1,5 +1,59 @@
+// pages/index.tsx
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+/** Reusable token image with optional aura glow */
+function TokenImage({
+  src,
+  alt,
+  size = 220,
+  aura = false,
+  auraColor = "rgba(0,184,255,0.25)",
+  blur = 40,
+}: {
+  src: string;
+  alt: string;
+  size?: number;
+  aura?: boolean;
+  auraColor?: string;
+  blur?: number;
+}) {
+  return (
+    <div
+      style={{
+        margin: "0 auto",
+        width: size,
+        height: size,
+        position: "relative",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      {aura && (
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: `radial-gradient(circle at center, ${auraColor}, transparent 70%)`,
+            filter: `blur(${blur}px)`,
+            zIndex: 0,
+          }}
+        />
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={`${size}px`}
+        style={{ objectFit: "contain", position: "relative", zIndex: 1 }}
+        priority
+      />
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -168,6 +222,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* KFX promo strip with glow (uses new transparent file) */}
+      <section
+        style={{
+          padding: "50px 0",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 24,
+          alignItems: "center",
+        }}
+      >
+        <div>
+          <h3 style={{ fontSize: 28, margin: "0 0 8px" }}>
+            Kickfixx Reward Token (<span style={{ color: "#00B8FF" }}>KFX</span>)
+          </h3>
+          <p style={{ opacity: 0.9, margin: "0 0 16px" }}>
+            Earn perks and priority with KFX while we roll out machines. Early supporters get
+            bonus allocations.
+          </p>
+          <Link
+            href="/kfx"
+            style={{
+              display: "inline-block",
+              background: "#00B8FF",
+              color: "#000",
+              borderRadius: 12,
+              padding: "12px 16px",
+              fontWeight: 800,
+              textDecoration: "none",
+            }}
+          >
+            Learn about KFX
+          </Link>
+        </div>
+
+        <div>
+          <TokenImage
+            src="/kfx-token.png"   // <-- transparent file
+            alt="KFX Reward Token"
+            size={220}
+            aura
+            auraColor="rgba(0,184,255,0.28)"
+            blur={46}
+          />
+        </div>
+      </section>
+
       {/* PLACEMENT OPTIONS */}
       <section style={{ padding: "60px 0", maxWidth: 1100, margin: "0 auto" }}>
         <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 10 }}>
@@ -213,25 +313,26 @@ export default function Home() {
         </div>
       </section>
 
-   <footer
-  style={{
-    marginTop: 60,
-    padding: "30px 0",
-    borderTop: "1px solid #1f2937",
-    opacity: 0.8,
-    fontSize: 14,
-    textAlign: "center",
-  }}
->
-  <div style={{ marginBottom: 8 }}>
-    <a
-      href="/ownership"
-      style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
-    >
-      Ownership Token (Coming Soon)
-    </a>
-  </div>
-  © 2025 Kickfixx. All rights reserved.
-</footer>
-
-
+      <footer
+        style={{
+          marginTop: 60,
+          padding: "30px 0",
+          borderTop: "1px solid #1f2937",
+          opacity: 0.8,
+          fontSize: 14,
+          textAlign: "center",
+        }}
+      >
+        <div style={{ marginBottom: 8 }}>
+          <Link
+            href="/ownership"
+            style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
+          >
+            Ownership Token (Coming Soon)
+          </Link>
+        </div>
+        © 2025 Kickfixx. All rights reserved.
+      </footer>
+    </div>
+  );
+}
