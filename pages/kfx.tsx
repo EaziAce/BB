@@ -443,15 +443,11 @@ export default function KFXPage() {
 
         {/* Section 5: What KFX Unlocks */}
         <section style={{ padding: "64px 0", background: "#0E0F12" }}>
-          <div style={{ margin: "0 auto", maxWidth: 1120, padding: "0 24px" {/* Soft link to Ownership Token (Coming Soon) */}
-<div style={{ marginTop: 16 }}>
-  <a
-    href="/ownership"
-    style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
-  >
-    Learn about the Ownership Token (Coming Soon) →
-  </a>
-</div> }}>
+          <div style={{ margin: "0 auto", maxWidth: 1120, padding: "0 24px" }}>
+            <Link href="/ownership" style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 700 }}>
+  Ownership Token (Coming Soon)
+</Link>
+
  
 
             <h2
@@ -628,6 +624,8 @@ export default function KFXPage() {
 
         {/* Section 7.5: FAQ */}
         <FAQ />
+
+
 
         {/* Section 8: Final CTA */}
         <section style={{ padding: "64px 0" }}>
