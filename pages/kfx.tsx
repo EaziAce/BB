@@ -2,6 +2,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link"; // <-- add this
 
 export default function KFXPage() {
   return (
@@ -22,7 +23,14 @@ export default function KFXPage() {
       </Head>
 
       {/* Page wrapper with dark theme + global font */}
-      <main style={{ background: "#0A0A0A", color: "#fff", fontFamily: `Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"` }}>
+      <main
+        style={{
+          background: "#0A0A0A",
+          color: "#fff",
+          fontFamily:
+            'Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
+        }}
+      >
         {/* Section 1: Hero */}
         <section style={{ position: "relative", overflow: "hidden" }}>
           {/* glow accents */}
@@ -108,7 +116,8 @@ export default function KFXPage() {
 
             <h1
               style={{
-                fontFamily: `"Roboto Condensed", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial`,
+                fontFamily:
+                  '"Roboto Condensed", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial',
                 fontSize: 40,
                 lineHeight: 1.15,
                 fontWeight: 800,
@@ -283,13 +292,7 @@ export default function KFXPage() {
             </div>
 
             {/* right token image with ambient aura */}
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                height: 420,
-              }}
-            >
+            <div style={{ position: "relative", width: "100%", height: 420 }}>
               <div
                 aria-hidden
                 style={{
@@ -307,7 +310,12 @@ export default function KFXPage() {
                 alt="KFX token large"
                 fill
                 sizes="420px"
-                style={{ objectFit: "contain", position: "relative", zIndex: 1, borderRadius: 16 }}
+                style={{
+                  objectFit: "contain",
+                  position: "relative",
+                  zIndex: 1,
+                  borderRadius: 16,
+                }}
               />
             </div>
           </div>
@@ -348,7 +356,9 @@ export default function KFXPage() {
                 Replace outdated point systems with something that actually holds
                 value.
               </li>
-              <li>Build the foundation for decentralized ownership, not just fandom.</li>
+              <li>
+                Build the foundation for decentralized ownership, not just fandom.
+              </li>
               <li>Create a gateway to future revenue participation and governance.</li>
             </ul>
 
@@ -363,7 +373,13 @@ export default function KFXPage() {
               }}
             >
               <p style={{ color: "#e4e4e7", margin: 0 }}>
-                <span style={{ fontWeight: 800, color: "#fff", fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
+                <span
+                  style={{
+                    fontWeight: 800,
+                    color: "#fff",
+                    fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                  }}
+                >
                   KFX is not just a loyalty token.
                 </span>{" "}
                 It is your access pass into the ownership era of physical
@@ -444,11 +460,12 @@ export default function KFXPage() {
         {/* Section 5: What KFX Unlocks */}
         <section style={{ padding: "64px 0", background: "#0E0F12" }}>
           <div style={{ margin: "0 auto", maxWidth: 1120, padding: "0 24px" }}>
-            <Link href="/ownership" style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 700 }}>
-  Ownership Token (Coming Soon)
-</Link>
-
- 
+            <Link
+              href="/ownership"
+              style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 700 }}
+            >
+              Ownership Token (Coming Soon)
+            </Link>
 
             <h2
               style={{
@@ -505,7 +522,13 @@ export default function KFXPage() {
               }}
             >
               <p style={{ color: "#e4e4e7", margin: 0 }}>
-                <span style={{ fontWeight: 800, color: "#fff", fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
+                <span
+                  style={{
+                    fontWeight: 800,
+                    color: "#fff",
+                    fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                  }}
+                >
                   Holding KFX today
                 </span>{" "}
                 gives you early access, priority advantages, and potential
@@ -585,7 +608,14 @@ export default function KFXPage() {
               "linear-gradient(to bottom, #0A0A0A 0%, #0E0F12 100%)",
           }}
         >
-          <div style={{ margin: "0 auto", maxWidth: 960, padding: "0 24px", textAlign: "center" }}>
+          <div
+            style={{
+              margin: "0 auto",
+              maxWidth: 960,
+              padding: "0 24px",
+              textAlign: "center",
+            }}
+          >
             <h2
               style={{
                 fontFamily: `"Roboto Condensed", Inter, system-ui`,
@@ -612,7 +642,13 @@ export default function KFXPage() {
               }}
             >
               <p style={{ color: "#e4e4e7", margin: 0 }}>
-                <span style={{ fontWeight: 800, color: "#fff", fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
+                <span
+                  style={{
+                    fontWeight: 800,
+                    color: "#fff",
+                    fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                  }}
+                >
                   Kickfixx isn’t just launching a product —
                 </span>{" "}
                 we’re building a new economic layer for human performance and
@@ -625,11 +661,16 @@ export default function KFXPage() {
         {/* Section 7.5: FAQ */}
         <FAQ />
 
-
-
         {/* Section 8: Final CTA */}
         <section style={{ padding: "64px 0" }}>
-          <div style={{ margin: "0 auto", maxWidth: 960, padding: "0 24px", textAlign: "center" }}>
+          <div
+            style={{
+              margin: "0 auto",
+              maxWidth: 960,
+              padding: "0 24px",
+              textAlign: "center",
+            }}
+          >
             <h2
               style={{
                 fontFamily: `"Roboto Condensed", Inter, system-ui`,
@@ -640,7 +681,14 @@ export default function KFXPage() {
             >
               Phase One Is Now Open — Don’t Watch the Future Happen. Own It.
             </h2>
-            <ul style={{ marginTop: 16, color: "#d4d4d8", listStyle: "none", padding: 0 }}>
+            <ul
+              style={{
+                marginTop: 16,
+                color: "#d4d4d8",
+                listStyle: "none",
+                padding: 0,
+              }}
+            >
               <li>• Bonus KFX tokens for founding members</li>
               <li>• Early access to tokenized vending ownership rounds</li>
               <li>• Priority in future governance</li>
@@ -819,7 +867,7 @@ function FAQ() {
     },
     {
       q: "Who do I contact with questions?",
-      a: "Email info@kickfixx.com and include “KFX” in the subject.",
+      a: 'Email info@kickfixx.com and include "KFX" in the subject.',
     },
   ];
 
@@ -840,7 +888,6 @@ function FAQ() {
         <p style={{ marginTop: 12, color: "#d4d4d8", textAlign: "center" }}>
           Clear answers to the most common questions about KFX and the Ownership Token.
         </p>
-        
 
         <div style={{ marginTop: 24, display: "grid", gap: 12 }}>
           {items.map((item, i) => (
@@ -852,8 +899,6 @@ function FAQ() {
                 background: "rgba(24,24,27,0.4)",
                 padding: 20,
               }}
-             
-
             >
               <summary
                 style={{
@@ -864,7 +909,12 @@ function FAQ() {
                   listStyle: "none",
                 }}
               >
-                <span style={{ fontWeight: 800, fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
+                <span
+                  style={{
+                    fontWeight: 800,
+                    fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                  }}
+                >
                   {item.q}
                 </span>
                 <span style={{ color: "#a1a1aa", marginLeft: 16 }} aria-hidden>
@@ -879,17 +929,15 @@ function FAQ() {
         <div style={{ marginTop: 24, textAlign: "center" }}>
           <a href="#join" style={primaryBtn}>
             Join Early Access
-            <p style={{ marginTop: 12 }}>
-  <a
-    href="/ownership"
-    style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
-  >
-    Ownership Token (Coming Soon) →
-  </a>
-</p>
-
-            
-         </a>
+          </a>
+          <p style={{ marginTop: 12 }}>
+            <a
+              href="/ownership"
+              style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
+            >
+              Ownership Token (Coming Soon) →
+            </a>
+          </p>
         </div>
       </div>
     </section>
