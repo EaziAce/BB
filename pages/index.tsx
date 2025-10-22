@@ -14,7 +14,7 @@ export default function Home() {
           borderBottom: "1px solid #1f2937",
         }}
       >
-        <Link href="/">
+        <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
           <Image
             src="/kickfixx-logo-00B8FF.png"
             alt="Kickfixx"
@@ -23,12 +23,21 @@ export default function Home() {
             priority
           />
         </Link>
-        <Link
-          href="/contact"
-          style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}
-        >
-          Contact
-        </Link>
+
+        <nav style={{ display: "flex", gap: 16 }}>
+          <Link
+            href="/kfx"
+            style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}
+          >
+            KFX Token
+          </Link>
+          <Link
+            href="/contact"
+            style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}
+          >
+            Contact
+          </Link>
+        </nav>
       </header>
 
       {/* Hero */}
@@ -39,8 +48,6 @@ export default function Home() {
           gap: 28,
           alignItems: "center",
           padding: "48px 0",
-          import Link from 'next/link';
-
         }}
       >
         <div>
@@ -48,162 +55,174 @@ export default function Home() {
             <span style={{ color: "#00B8FF" }}>Kickfixx</span> Vending & Supplies
           </h1>
           <p style={{ opacity: 0.9, margin: "0 0 18px" }}>
-            Smart, clean, and modern convenience. Branded Machines and
+            Smart, clean, and modern convenience. Branded machines and
             premium products for busy locations.
           </p>
-          <Link
-            href="/contact"
-            style={{
-              display: "inline-block",
-              background: "#00B8FF",
-              color: "#000",
-              borderRadius: 12,
-              padding: "12px 16px",
-              fontWeight: 800,
-              textDecoration: "none",
-            }}
-          >
-            Get in touch
-         <Link
-  href="/kfx"
-  style={{
-    display: "inline-block",
-    background: "#00B8FF",
-    color: "#000",
-    borderRadius: 12,
-    padding: "12px 16px",
-    fontWeight: 800,
-    textDecoration: "none",
-    marginLeft: 12, // so it sits beside the first button
-  }}
->
-  Explore KFX Token
-</Link>
 
+          {/* CTA buttons */}
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <Link
+              href="/contact"
+              style={{
+                display: "inline-block",
+                background: "#00B8FF",
+                color: "#000",
+                borderRadius: 12,
+                padding: "12px 16px",
+                fontWeight: 800,
+                textDecoration: "none",
+              }}
+            >
+              Get in touch
+            </Link>
 
+            <Link
+              href="/kfx"
+              style={{
+                display: "inline-block",
+                background: "#00B8FF",
+                color: "#000",
+                borderRadius: 12,
+                padding: "12px 16px",
+                fontWeight: 800,
+                textDecoration: "none",
+              }}
+            >
+              Explore KFX Token
+            </Link>
+          </div>
         </div>
 
-    <div
-  style={{
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "hidden",
-    borderRadius: 20,
-    margin: "40px auto",
-    maxWidth: 600,
-    background: "radial-gradient(circle at center, rgba(0,184,255,0.08) 0%, transparent 70%)",
-    boxShadow:
-      "0 8px 24px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 184, 255, 0.35)",
-  }}
->
-  <Image
-    src="/vending-mockup.png"
-    alt="Kickfixx vending machine mockup"
-    width={1000}
-    height={1300}
-    style={{
-      objectFit: "cover", // crops only a little of the white edge
-      width: "100%",
-      height: "auto",
-      transform: "scale(1.05)", // small zoom to tighten framing
-      transition: "transform 0.3s ease, box-shadow 0.3s ease",
-    }}
-    className="vending-image"
-    priority
-  />
-</div>
-
-
+        {/* Right-side image */}
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
+            borderRadius: 20,
+            margin: "40px auto",
+            maxWidth: 600,
+            background:
+              "radial-gradient(circle at center, rgba(0,184,255,0.08) 0%, transparent 70%)",
+            boxShadow:
+              "0 8px 24px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 184, 255, 0.35)",
+          }}
+        >
+          <Image
+            src="/vending-mockup.png"
+            alt="Kickfixx vending machine mockup"
+            width={1000}
+            height={1300}
+            style={{
+              objectFit: "cover",
+              width: "100%",
+              height: "auto",
+              transform: "scale(1.05)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            }}
+            priority
+          />
+        </div>
       </section>
 
-      {/* --- FEATURES SECTION --- */}
-<section style={{ padding: "60px 0", background: "#0D0D0D" }}>
-  <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 40 }}>
-    Why Choose <span style={{ color: "#00B8FF" }}>Kickfixx</span>
-  </h2>
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-      gap: 24,
-      maxWidth: 1100,
-      margin: "0 auto",
-      textAlign: "center"
-    }}
-  >
-    {[
-      {
-        title: "Convenience",
-        text: "On-site access to energizing drinks & healthy snacks that boost productivity."
-      },
-      {
-        title: "Transparent Reporting",
-        text: "Simple monthly/quarterly sales summaries and flexible terms."
-      },
-      {
-        title: "Reliable Service",
-        text: "We install, restock, and maintain — so your space stays clean and stocked."
-      }
-    ].map((f, i) => (
-      <div key={i} className="card">
-  <h3 style={{ color: "#00B8FF", marginBottom: 10 }}>{f.title}</h3>
-  <p style={{ opacity: 0.85 }}>{f.text}</p>
-</div>
+      {/* FEATURES SECTION */}
+      <section style={{ padding: "60px 0", background: "#0D0D0D" }}>
+        <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 40 }}>
+          Why Choose <span style={{ color: "#00B8FF" }}>Kickfixx</span>
+        </h2>
 
-    ))}
-  </div>
-</section>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: 24,
+            maxWidth: 1100,
+            margin: "0 auto",
+            textAlign: "center",
+          }}
+        >
+          {[
+            {
+              title: "Convenience",
+              text:
+                "On-site access to energizing drinks & healthy snacks that boost productivity.",
+            },
+            {
+              title: "Transparent Reporting",
+              text:
+                "Simple monthly/quarterly sales summaries and flexible terms.",
+            },
+            {
+              title: "Reliable Service",
+              text:
+                "We install, restock, and maintain — so your space stays clean and stocked.",
+            },
+          ].map((f, i) => (
+            <div key={i} className="card">
+              <h3 style={{ color: "#00B8FF", marginBottom: 10 }}>{f.title}</h3>
+              <p style={{ opacity: 0.85 }}>{f.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-{/* --- PLACEMENT OPTIONS --- */}
-<section style={{ padding: "60px 0", maxWidth: 1100, margin: "0 auto" }}>
-  <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 10 }}>
-    Placement Options
-  </h2>
-  <p style={{ textAlign: "center", opacity: 0.8, marginBottom: 40 }}>
-    Choose what fits your property best. We’ll recommend based on traffic and goals.
-  </p>
+      {/* PLACEMENT OPTIONS */}
+      <section style={{ padding: "60px 0", maxWidth: 1100, margin: "0 auto" }}>
+        <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 10 }}>
+          Placement Options
+        </h2>
+        <p style={{ textAlign: "center", opacity: 0.8, marginBottom: 40 }}>
+          Choose what fits your property best. We’ll recommend based on traffic
+          and goals.
+        </p>
 
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-      gap: 24
-    }}
-  >
-    {[
-      {
-        title: "Revenue Share",
-        desc: "Building receives a % of monthly gross sales.",
-        tag: "Great for medium–high traffic"
-      },
-      {
-        title: "Flat Fee",
-        desc: "Fixed monthly rent for the machine space.",
-        tag: "Predictable sites & budgets"
-      },
-      {
-        title: "No-Fee Trial",
-        desc: "Fast, low-friction placement to prove demand.",
-        tag: "Ideal for new or strategic locations"
-      }
-    ].map((o, i) => (
-  <div key={i} className="card">
-  <h3 style={{ marginBottom: 8 }}>{o.title}</h3>
-  <p style={{ opacity: 0.85 }}>{o.desc}</p>
-  <p style={{ color: "#22C55E", fontWeight: 600, marginTop: 12 }}>✓ {o.tag}</p>
-</div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: 24,
+          }}
+        >
+          {[
+            {
+              title: "Revenue Share",
+              desc: "Building receives a % of monthly gross sales.",
+              tag: "Great for medium–high traffic",
+            },
+            {
+              title: "Flat Fee",
+              desc: "Fixed monthly rent for the machine space.",
+              tag: "Predictable sites & budgets",
+            },
+            {
+              title: "No-Fee Trial",
+              desc: "Fast, low-friction placement to prove demand.",
+              tag: "Ideal for new or strategic locations",
+            },
+          ].map((o, i) => (
+            <div key={i} className="card">
+              <h3 style={{ marginBottom: 8 }}>{o.title}</h3>
+              <p style={{ opacity: 0.85 }}>{o.desc}</p>
+              <p style={{ color: "#22C55E", fontWeight: 600, marginTop: 12 }}>
+                ✓ {o.tag}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    ))}
-  </div>
-</section>
-
-
-    
-
-      <footer style={{ marginTop: 60, padding: "30px 0", borderTop: "1px solid #1f2937", opacity: 0.8, fontSize: 14 }}>
-        
+      <footer
+        style={{
+          marginTop: 60,
+          padding: "30px 0",
+          borderTop: "1px solid #1f2937",
+          opacity: 0.8,
+          fontSize: 14,
+          textAlign: "center",
+        }}
+      >
         © 2025 Kickfixx. All rights reserved.
       </footer>
     </div>
