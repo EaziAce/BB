@@ -47,7 +47,8 @@ function TokenImage({
         src={src}
         alt={alt}
         fill
-        sizes={`${size}px`}
+        // responsive sizes string keeps ESLint happy
+        sizes={`(max-width: 768px) 60vw, ${size}px`}
         style={{ objectFit: "contain", position: "relative", zIndex: 1 }}
         priority
       />
@@ -68,28 +69,28 @@ export default function Home() {
           borderBottom: "1px solid #1f2937",
         }}
       >
-        <Link href="/" style={{ display: "inline-flex", alignItems: "center" }}>
-          <Image
-            src="/kickfixx-logo-00B8FF.png"
-            alt="Kickfixx"
-            width={160}
-            height={40}
-            priority
-          />
+        <Link href="/">
+          <a style={{ display: "inline-flex", alignItems: "center" }}>
+            <Image
+              src="/kickfixx-logo-00B8FF.png"
+              alt="Kickfixx"
+              width={160}
+              height={40}
+              priority
+            />
+          </a>
         </Link>
 
         <nav style={{ display: "flex", gap: 16 }}>
-          <Link
-            href="/kfx"
-            style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}
-          >
-            KFX Token
+          <Link href="/kfx">
+            <a style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}>
+              KFX Token
+            </a>
           </Link>
-          <Link
-            href="/contact"
-            style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}
-          >
-            Contact
+          <Link href="/contact">
+            <a style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}>
+              Contact
+            </a>
           </Link>
         </nav>
       </header>
@@ -115,34 +116,36 @@ export default function Home() {
 
           {/* CTA buttons */}
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Link
-              href="/contact"
-              style={{
-                display: "inline-block",
-                background: "#00B8FF",
-                color: "#000",
-                borderRadius: 12,
-                padding: "12px 16px",
-                fontWeight: 800,
-                textDecoration: "none",
-              }}
-            >
-              Get in touch
+            <Link href="/contact">
+              <a
+                style={{
+                  display: "inline-block",
+                  background: "#00B8FF",
+                  color: "#000",
+                  borderRadius: 12,
+                  padding: "12px 16px",
+                  fontWeight: 800,
+                  textDecoration: "none",
+                }}
+              >
+                Get in touch
+              </a>
             </Link>
 
-            <Link
-              href="/kfx"
-              style={{
-                display: "inline-block",
-                background: "#00B8FF",
-                color: "#000",
-                borderRadius: 12,
-                padding: "12px 16px",
-                fontWeight: 800,
-                textDecoration: "none",
-              }}
-            >
-              Explore KFX Token
+            <Link href="/kfx">
+              <a
+                style={{
+                  display: "inline-block",
+                  background: "#00B8FF",
+                  color: "#000",
+                  borderRadius: 12,
+                  padding: "12px 16px",
+                  fontWeight: 800,
+                  textDecoration: "none",
+                }}
+              >
+                Explore KFX Token
+              </a>
             </Link>
           </div>
         </div>
@@ -222,7 +225,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* KFX promo strip with glow (uses new transparent file) */}
+      {/* KFX promo strip with glow */}
       <section
         style={{
           padding: "50px 0",
@@ -240,25 +243,26 @@ export default function Home() {
             Earn perks and priority with KFX while we roll out machines. Early supporters get
             bonus allocations.
           </p>
-          <Link
-            href="/kfx"
-            style={{
-              display: "inline-block",
-              background: "#00B8FF",
-              color: "#000",
-              borderRadius: 12,
-              padding: "12px 16px",
-              fontWeight: 800,
-              textDecoration: "none",
-            }}
-          >
-            Learn about KFX
+          <Link href="/kfx">
+            <a
+              style={{
+                display: "inline-block",
+                background: "#00B8FF",
+                color: "#000",
+                borderRadius: 12,
+                padding: "12px 16px",
+                fontWeight: 800,
+                textDecoration: "none",
+              }}
+            >
+              Learn about KFX
+            </a>
           </Link>
         </div>
 
         <div>
           <TokenImage
-            src="/kfx-token.png"   // <-- transparent file
+            src="/kfx-token.png"   // transparent file
             alt="KFX Reward Token"
             size={220}
             aura
@@ -324,11 +328,10 @@ export default function Home() {
         }}
       >
         <div style={{ marginBottom: 8 }}>
-          <Link
-            href="/ownership"
-            style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
-          >
-            Ownership Token (Coming Soon)
+          <Link href="/ownership">
+            <a style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}>
+              Ownership Token (Coming Soon)
+            </a>
           </Link>
         </div>
         © 2025 Kickfixx. All rights reserved.
