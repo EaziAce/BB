@@ -213,18 +213,27 @@ export default function Home() {
         </div>
       </section>
 
-      <footer
-        style={{
-          marginTop: 60,
-          padding: "30px 0",
-          borderTop: "1px solid #1f2937",
-          opacity: 0.8,
-          fontSize: 14,
-          textAlign: "center",
-        }}
-      >
-        © 2025 Kickfixx. All rights reserved.
-      </footer>
+   <footer
+  style={{
+    marginTop: 60,
+    padding: "30px 0",
+    borderTop: "1px solid #1f2937",
+    opacity: 0.8,
+    fontSize: 14,
+    textAlign: "center",
+  }}
+>
+  <div style={{ marginBottom: 8 }}>
+    <a
+      href="/ownership"
+      style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
+    >
+      Ownership Token (Coming Soon)
+    </a>
+  </div>
+  © 2025 Kickfixx. All rights reserved.
+</footer>
+
     </div>
   );
 }
