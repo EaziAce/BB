@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 
-
 export default function KFXPage() {
   return (
     <>
@@ -16,19 +15,25 @@ export default function KFXPage() {
       <main className="bg-[#0A0A0A] text-white">
         {/* Section 1: Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full blur-3xl opacity-30"
-                 style={{ background: "radial-gradient(closest-side, #00B8FF, transparent)" }} />
-            <div className="absolute -bottom-40 -right-32 h-96 w-96 rounded-full blur-3xl opacity-20"
-                 style={{ background: "radial-gradient(closest-side, #00B8FF, transparent)" }} />
+          {/* glow accents */}
+          <div aria-hidden className="absolute inset-0 pointer-events-none">
+            <div
+              className="absolute -top-40 -left-32 h-96 w-96 rounded-full blur-3xl opacity-30"
+              style={{ background: "radial-gradient(closest-side, #00B8FF, transparent)" }}
+            />
+            <div
+              className="absolute -bottom-40 -right-32 h-96 w-96 rounded-full blur-3xl opacity-20"
+              style={{ background: "radial-gradient(closest-side, #00B8FF, transparent)" }}
+            />
           </div>
 
           <div className="relative mx-auto max-w-6xl px-6 py-20 md:py-28 text-center">
             <div className="mx-auto w-40 h-40 md:w-56 md:h-56 relative mb-8">
               <Image
                 src="/kfx-token.png"
-                alt="KFX Token"
+                alt="KFX token"
                 fill
+                sizes="(max-width: 768px) 10rem, 14rem"
                 className="object-contain drop-shadow-[0_0_30px_rgba(0,184,255,0.35)]"
                 priority
               />
@@ -46,13 +51,23 @@ export default function KFXPage() {
             </p>
 
             <div className="mt-8 flex items-center justify-center gap-3">
-              <a href="#join" className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition">
+              <a
+                href="#join"
+                className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition"
+              >
                 Join Early Access
               </a>
-              <a href="#how" className="inline-flex items-center justify-center rounded-2xl border border-zinc-700 px-6 py-3 font-medium hover:border-zinc-500 transition">
+              <a
+                href="#how"
+                className="inline-flex items-center justify-center rounded-2xl border border-zinc-700 px-6 py-3 font-medium hover:border-zinc-500 transition"
+              >
                 Learn How It Works
               </a>
             </div>
+
+            <p className="mt-2 text-xs text-zinc-500">
+              Early Access = interest + whitelist. Purchasing opens in the next phase.
+            </p>
           </div>
         </section>
 
@@ -73,10 +88,10 @@ export default function KFXPage() {
               </ul>
 
               <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-                <div className="rounded-xl border border-zinc-800 p-3 bg-zinc-900/40">⚡ <span className="text-zinc-400">Symbol:</span> KFX</div>
-                <div className="rounded-xl border border-zinc-800 p-3 bg-zinc-900/40">🧱 <span className="text-zinc-400">Network:</span> Base (L2)</div>
-                <div className="rounded-xl border border-zinc-800 p-3 bg-zinc-900/40">💸 <span className="text-zinc-400">Fees:</span> Ultra-low</div>
-                <div className="rounded-xl border border-zinc-800 p-3 bg-zinc-900/40">🛠️ <span className="text-zinc-400">Use:</span> Rewards → Access → Governance</div>
+                <Stat>⚡ <span className="text-zinc-400">Symbol:</span> KFX</Stat>
+                <Stat>🧱 <span className="text-zinc-400">Network:</span> Base (L2)</Stat>
+                <Stat>💸 <span className="text-zinc-400">Fees:</span> Ultra-low</Stat>
+                <Stat>🛠️ <span className="text-zinc-400">Use:</span> Rewards → Access → Governance</Stat>
               </div>
 
               <div className="mt-6">
@@ -87,8 +102,9 @@ export default function KFXPage() {
             <div className="relative h-64 md:h-[420px]">
               <Image
                 src="/kfx-token.png"
-                alt="KFX Token"
+                alt="KFX token large"
                 fill
+                sizes="(max-width: 768px) 16rem, 420px"
                 className="object-contain drop-shadow-[0_0_35px_rgba(0,184,255,0.35)]"
               />
             </div>
@@ -132,7 +148,10 @@ export default function KFXPage() {
             </div>
 
             <div className="mt-8">
-              <a href="#join" className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition">
+              <a
+                href="#join"
+                className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition"
+              >
                 Start Earning Today
               </a>
             </div>
@@ -176,12 +195,14 @@ export default function KFXPage() {
               <input
                 type="text"
                 name="name"
+                aria-label="First name"
                 placeholder="First name (optional)"
                 className="rounded-2xl bg-zinc-900 border border-zinc-800 px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-[#00B8FF]"
               />
               <input
                 type="email"
                 name="email"
+                aria-label="Email address"
                 required
                 placeholder="Email address"
                 className="rounded-2xl bg-zinc-900 border border-zinc-800 px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-[#00B8FF]"
@@ -218,82 +239,14 @@ export default function KFXPage() {
         </section>
 
         {/* Section 7.5: FAQ */}
-<section id="faq" className="py-16 md:py-24">
-  <div className="mx-auto max-w-4xl px-6">
-    <h2 className="text-2xl md:text-3xl font-semibold text-center">KFX Early Access — FAQ</h2>
-    <p className="mt-3 text-zinc-300 text-center">
-      Clear answers to the most common questions about KFX and the Ownership Token.
-    </p>
-
-    <div className="mt-10 space-y-3">
-      {[
-        {
-          q: "Can I buy tokens right now?",
-          a: "Not yet. This is the Early Access phase for interest and whitelist allocation. Purchases will open in the next phase. Early members get bonus KFX and first rights to invest."
-        },
-        {
-          q: "What’s the difference between KFX and the Ownership Token?",
-          a: "KFX is a reward/utility token used for perks, access, and engagement. The Ownership Token is a regulated asset representing fractional machine ownership with revenue payouts. KFX holders get priority access when Ownership Tokens go live."
-        },
-        {
-          q: "Do I need a crypto wallet today?",
-          a: "No. You can join Early Access with just an email. We’ll guide you to set up a wallet (e.g., Coinbase Wallet) before token distribution."
-        },
-        {
-          q: "Which network will KFX use?",
-          a: "We plan to launch on Base (Coinbase L2) for fast, low-fee transactions and smooth onboarding."
-        },
-        {
-          q: "Are these tokens securities?",
-          a: "KFX is a utility/rewards token (not an investment). The Ownership Token will be structured as a compliant security (e.g., Reg D/CF via a licensed platform) with KYC/AML as required."
-        },
-        {
-          q: "When will I receive KFX from Early Access?",
-          a: "Upon Phase-1 activation (post-signup campaign). Founding members receive bonus KFX and instructions to claim."
-        },
-        {
-          q: "When does the Ownership Token sale open?",
-          a: "After first machine placement is announced and legal/compliance setup is complete. Early Access members will be notified first."
-        },
-        {
-          q: "How do I earn KFX now without a machine live?",
-          a: "Join Early Access, engage on socials, and refer locations. Purchases (+ crypto bonuses) start when machines go live."
-        },
-        {
-          q: "What fees are involved?",
-          a: "KFX transactions on Base are very low (typically cents). Ownership Token platform fees will be disclosed at launch."
-        },
-        {
-          q: "Who do I contact with questions?",
-          a: "Email info@kickfixx.com and include “KFX” in the subject."
-        }
-      ].map((item, i) => (
-        <details
-          key={i}
-          className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 open:border-[#00B8FF]/50 transition"
-        >
-          <summary className="flex cursor-pointer list-none items-center justify-between">
-            <span className="font-semibold">{item.q}</span>
-            <span className="ml-4 text-zinc-500 group-open:rotate-45 transition">＋</span>
-          </summary>
-          <p className="mt-3 text-zinc-400">{item.a}</p>
-        </details>
-      ))}
-    </div>
-
-    <div className="mt-8 text-center">
-      <a href="#join" className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition">
-        Join Early Access
-      </a>
-    </div>
-  </div>
-</section>
-
+        <FAQ />
 
         {/* Section 8: Final CTA */}
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-4xl px-6 text-center">
-            <h2 className="text-2xl md:text-3xl font-semibold">Phase One Is Now Open — Don’t Watch the Future Happen. Own It.</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Phase One Is Now Open — Don’t Watch the Future Happen. Own It.
+            </h2>
             <ul className="mt-5 text-zinc-300 space-y-2">
               <li>• Bonus KFX tokens for founding members</li>
               <li>• Early access to tokenized vending ownership rounds</li>
@@ -302,7 +255,10 @@ export default function KFXPage() {
             <p className="mt-3 text-zinc-400">Founding benefits are limited and won’t repeat in later phases.</p>
 
             <div className="mt-8">
-              <a href="#join" className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition">
+              <a
+                href="#join"
+                className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition"
+              >
                 Join Kickfixx Phase One
               </a>
             </div>
@@ -310,6 +266,13 @@ export default function KFXPage() {
         </section>
       </main>
     </>
+  );
+}
+
+/* ---------- small reusable UI ---------- */
+function Stat({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="rounded-xl border border-zinc-800 p-3 bg-zinc-900/40">{children}</div>
   );
 }
 
@@ -332,5 +295,87 @@ function UnlockCard({ phase, title, desc }: { phase: string; title: string; desc
       <div className="mt-1 font-semibold">{title}</div>
       <p className="mt-2 text-zinc-400 text-sm">{desc}</p>
     </div>
+  );
+}
+
+function FAQ() {
+  const items = [
+    {
+      q: "Can I buy tokens right now?",
+      a: "Not yet. This is the Early Access phase for interest and whitelist allocation. Purchases will open in the next phase. Early members get bonus KFX and first rights to invest.",
+    },
+    {
+      q: "What’s the difference between KFX and the Ownership Token?",
+      a: "KFX is a reward/utility token used for perks, access, and engagement. The Ownership Token is a regulated asset representing fractional machine ownership with revenue payouts. KFX holders get priority access when Ownership Tokens go live.",
+    },
+    {
+      q: "Do I need a crypto wallet today?",
+      a: "No. You can join Early Access with just an email. We’ll guide you to set up a wallet (e.g., Coinbase Wallet) before token distribution.",
+    },
+    {
+      q: "Which network will KFX use?",
+      a: "We plan to launch on Base (Coinbase L2) for fast, low-fee transactions and smooth onboarding.",
+    },
+    {
+      q: "Are these tokens securities?",
+      a: "KFX is a utility/rewards token (not an investment). The Ownership Token will be structured as a compliant security (e.g., Reg D/CF via a licensed platform) with KYC/AML as required.",
+    },
+    {
+      q: "When will I receive KFX from Early Access?",
+      a: "Upon Phase-1 activation (post-signup campaign). Founding members receive bonus KFX and instructions to claim.",
+    },
+    {
+      q: "When does the Ownership Token sale open?",
+      a: "After first machine placement is announced and legal/compliance setup is complete. Early Access members will be notified first.",
+    },
+    {
+      q: "How do I earn KFX now without a machine live?",
+      a: "Join Early Access, engage on socials, and refer locations. Purchases (+ crypto bonuses) start when machines go live.",
+    },
+    {
+      q: "What fees are involved?",
+      a: "KFX transactions on Base are very low (typically cents). Ownership Token platform fees will be disclosed at launch.",
+    },
+    {
+      q: "Who do I contact with questions?",
+      a: "Email info@kickfixx.com and include “KFX” in the subject.",
+    },
+  ];
+
+  return (
+    <section id="faq" className="py-16 md:py-24">
+      <div className="mx-auto max-w-4xl px-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center">KFX Early Access — FAQ</h2>
+        <p className="mt-3 text-zinc-300 text-center">
+          Clear answers to the most common questions about KFX and the Ownership Token.
+        </p>
+
+        <div className="mt-10 space-y-3">
+          {items.map((item, i) => (
+            <details
+              key={i}
+              className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 p-5 open:border-[#00B8FF]/50 transition"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between">
+                <span className="font-semibold">{item.q}</span>
+                <span className="ml-4 text-zinc-500 group-open:rotate-45 transition" aria-hidden>
+                  ＋
+                </span>
+              </summary>
+              <p className="mt-3 text-zinc-400">{item.a}</p>
+            </details>
+          ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <a
+            href="#join"
+            className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition"
+          >
+            Join Early Access
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
