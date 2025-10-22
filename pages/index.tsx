@@ -20,26 +20,14 @@ function TokenImage({
   blur?: number;
 }) {
   return (
-    <div
-      style={{
-        margin: "0 auto",
-        width: size,
-        height: size,
-        position: "relative",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="token-wrap" style={{ width: size, height: size }}>
       {aura && (
         <div
           aria-hidden
+          className="token-aura"
           style={{
-            position: "absolute",
-            inset: 0,
             background: `radial-gradient(circle at center, ${auraColor}, transparent 70%)`,
             filter: `blur(${blur}px)`,
-            zIndex: 0,
           }}
         />
       )}
@@ -47,159 +35,100 @@ function TokenImage({
         src={src}
         alt={alt}
         fill
-        // responsive sizes string keeps ESLint happy
-        sizes={`(max-width: 768px) 60vw, ${size}px`}
+        sizes="(max-width: 768px) 60vw, 220px"
         style={{ objectFit: "contain", position: "relative", zIndex: 1 }}
         priority
       />
+      <style jsx>{`
+        .token-wrap {
+          margin: 0 auto;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .token-aura {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+        }
+      `}</style>
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <div style={{ maxWidth: 1160, margin: "0 auto", padding: 20 }}>
+    <div className="page">
+      {/* HERO GLOWS (background accents) */}
+      <div className="hero-glows" aria-hidden>
+        <div className="glow glow-top" />
+        <div className="glow glow-bottom" />
+      </div>
+
       {/* Header */}
-      <header
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "14px 0",
-          borderBottom: "1px solid #1f2937",
-        }}
-      >
-        <Link href="/">
-          <a style={{ display: "inline-flex", alignItems: "center" }}>
-            <Image
-              src="/kickfixx-logo-00B8FF.png"
-              alt="Kickfixx"
-              width={160}
-              height={40}
-              priority
-            />
-          </a>
+      <header className="header">
+        <Link href="/" className="logoLink" aria-label="Kickfixx Home">
+          <Image
+            src="/kickfixx-logo-00B8FF.png"
+            alt="Kickfixx"
+            width={160}
+            height={40}
+            priority
+          />
         </Link>
 
-        <nav style={{ display: "flex", gap: 16 }}>
-          <Link href="/kfx">
-            <a style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}>
-              KFX Token
-            </a>
+        <nav className="nav">
+          <Link href="/kfx" className="navLink">
+            KFX Token
           </Link>
-          <Link href="/contact">
-            <a style={{ color: "#00B8FF", fontWeight: 800, textDecoration: "none" }}>
-              Contact
-            </a>
+          <Link href="/contact" className="navLink">
+            Contact
           </Link>
         </nav>
       </header>
 
       {/* Hero */}
-      <section
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1.2fr 1fr",
-          gap: 28,
-          alignItems: "center",
-          padding: "48px 0",
-        }}
-      >
-        <div>
-          <h1 style={{ fontSize: 46, lineHeight: 1.1, margin: "0 0 12px" }}>
-            <span style={{ color: "#00B8FF" }}>Kickfixx</span> Vending & Supplies
+      <section className="hero">
+        <div className="heroLeft">
+          <h1 className="h1">
+            <span className="brand">Kickfixx</span> Vending &amp; Supplies
           </h1>
-          <p style={{ opacity: 0.9, margin: "0 0 18px" }}>
+          <p className="lead">
             Smart, clean, and modern convenience. Branded machines and
             premium products for busy locations.
           </p>
 
-          {/* CTA buttons */}
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Link href="/contact">
-              <a
-                style={{
-                  display: "inline-block",
-                  background: "#00B8FF",
-                  color: "#000",
-                  borderRadius: 12,
-                  padding: "12px 16px",
-                  fontWeight: 800,
-                  textDecoration: "none",
-                }}
-              >
-                Get in touch
-              </a>
+          <div className="ctaRow">
+            <Link href="/contact" className="btnPrimary">
+              Get in touch
             </Link>
-
-            <Link href="/kfx">
-              <a
-                style={{
-                  display: "inline-block",
-                  background: "#00B8FF",
-                  color: "#000",
-                  borderRadius: 12,
-                  padding: "12px 16px",
-                  fontWeight: 800,
-                  textDecoration: "none",
-                }}
-              >
-                Explore KFX Token
-              </a>
+            <Link href="/kfx" className="btnPrimary">
+              Explore KFX Token
             </Link>
           </div>
         </div>
 
         {/* Right-side image */}
-        <div
-          style={{
-            position: "relative",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            overflow: "hidden",
-            borderRadius: 20,
-            margin: "40px auto",
-            maxWidth: 600,
-            background:
-              "radial-gradient(circle at center, rgba(0,184,255,0.08) 0%, transparent 70%)",
-            boxShadow:
-              "0 8px 24px rgba(0, 0, 0, 0.6), 0 0 35px rgba(0, 184, 255, 0.35)",
-          }}
-        >
+        <div className="heroImageWrap">
           <Image
             src="/vending-mockup.png"
             alt="Kickfixx vending machine mockup"
             width={1000}
             height={1300}
-            style={{
-              objectFit: "cover",
-              width: "100%",
-              height: "auto",
-              transform: "scale(1.05)",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}
+            className="heroImage"
             priority
           />
         </div>
       </section>
 
       {/* FEATURES SECTION */}
-      <section style={{ padding: "60px 0", background: "#0D0D0D" }}>
-        <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 40 }}>
-          Why Choose <span style={{ color: "#00B8FF" }}>Kickfixx</span>
+      <section className="section sectionDark">
+        <h2 className="sectionTitle">
+          Why Choose <span className="brand">Kickfixx</span>
         </h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 24,
-            maxWidth: 1100,
-            margin: "0 auto",
-            textAlign: "center",
-          }}
-        >
+        <div className="gridCards">
           {[
             {
               title: "Convenience",
@@ -218,49 +147,29 @@ export default function Home() {
             },
           ].map((f, i) => (
             <div key={i} className="card">
-              <h3 style={{ color: "#00B8FF", marginBottom: 10 }}>{f.title}</h3>
-              <p style={{ opacity: 0.85 }}>{f.text}</p>
+              <h3 className="cardTitle">{f.title}</h3>
+              <p className="cardText">{f.text}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* KFX promo strip with glow */}
-      <section
-        style={{
-          padding: "50px 0",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 24,
-          alignItems: "center",
-        }}
-      >
-        <div>
-          <h3 style={{ fontSize: 28, margin: "0 0 8px" }}>
-            Kickfixx Reward Token (<span style={{ color: "#00B8FF" }}>KFX</span>)
+      <section className="section promo">
+        <div className="promoCopy">
+          <h3 className="promoH3">
+            Kickfixx Reward Token (<span className="brand">KFX</span>)
           </h3>
-          <p style={{ opacity: 0.9, margin: "0 0 16px" }}>
+          <p className="promoP">
             Earn perks and priority with KFX while we roll out machines. Early supporters get
             bonus allocations.
           </p>
-          <Link href="/kfx">
-            <a
-              style={{
-                display: "inline-block",
-                background: "#00B8FF",
-                color: "#000",
-                borderRadius: 12,
-                padding: "12px 16px",
-                fontWeight: 800,
-                textDecoration: "none",
-              }}
-            >
-              Learn about KFX
-            </a>
+          <Link href="/kfx" className="btnPrimary">
+            Learn about KFX
           </Link>
         </div>
 
-        <div>
+        <div className="promoVisual">
           <TokenImage
             src="/kfx-token.png"   // transparent file
             alt="KFX Reward Token"
@@ -273,22 +182,14 @@ export default function Home() {
       </section>
 
       {/* PLACEMENT OPTIONS */}
-      <section style={{ padding: "60px 0", maxWidth: 1100, margin: "0 auto" }}>
-        <h2 style={{ textAlign: "center", fontSize: 32, marginBottom: 10 }}>
-          Placement Options
-        </h2>
-        <p style={{ textAlign: "center", opacity: 0.8, marginBottom: 40 }}>
+      <section className="section">
+        <h2 className="sectionTitle">Placement Options</h2>
+        <p className="sectionSub">
           Choose what fits your property best. We’ll recommend based on traffic
           and goals.
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 24,
-          }}
-        >
+        <div className="gridCards">
           {[
             {
               title: "Revenue Share",
@@ -307,35 +208,234 @@ export default function Home() {
             },
           ].map((o, i) => (
             <div key={i} className="card">
-              <h3 style={{ marginBottom: 8 }}>{o.title}</h3>
-              <p style={{ opacity: 0.85 }}>{o.desc}</p>
-              <p style={{ color: "#22C55E", fontWeight: 600, marginTop: 12 }}>
-                ✓ {o.tag}
-              </p>
+              <h3 className="cardTitle">{o.title}</h3>
+              <p className="cardText">{o.desc}</p>
+              <p className="cardTag">✓ {o.tag}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <footer
-        style={{
-          marginTop: 60,
-          padding: "30px 0",
-          borderTop: "1px solid #1f2937",
-          opacity: 0.8,
-          fontSize: 14,
-          textAlign: "center",
-        }}
-      >
+      <footer className="footer">
         <div style={{ marginBottom: 8 }}>
-          <Link href="/ownership">
-            <a style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}>
-              Ownership Token (Coming Soon)
-            </a>
+          <Link href="/ownership" className="footLink">
+            Ownership Token (Coming Soon)
           </Link>
         </div>
         © 2025 Kickfixx. All rights reserved.
       </footer>
+
+      {/* styled-jsx for responsiveness + glow polish */}
+      <style jsx>{`
+        .page {
+          max-width: 1160px;
+          margin: 0 auto;
+          padding: 20px;
+          position: relative;
+        }
+
+        .hero-glows {
+          position: fixed;
+          inset: 0;
+          pointer-events: none;
+          z-index: -1;
+        }
+        .glow {
+          position: absolute;
+          height: 24rem;
+          width: 24rem;
+          border-radius: 9999px;
+          filter: blur(60px);
+        }
+        .glow-top {
+          top: -160px;
+          left: -128px;
+          opacity: 0.3;
+          background: radial-gradient(closest-side, #00b8ff, rgba(0,0,0,0));
+        }
+        .glow-bottom {
+          bottom: -160px;
+          right: -128px;
+          opacity: 0.2;
+          background: radial-gradient(closest-side, #00b8ff, rgba(0,0,0,0));
+        }
+
+        .header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 0;
+          border-bottom: 1px solid #1f2937;
+        }
+        .logoLink {
+          display: inline-flex;
+          align-items: center;
+        }
+        .nav {
+          display: flex;
+          gap: 16px;
+        }
+        .navLink {
+          color: #00b8ff;
+          font-weight: 800;
+          text-decoration: none;
+        }
+
+        .hero {
+          display: grid;
+          grid-template-columns: 1.2fr 1fr;
+          gap: 28px;
+          align-items: center;
+          padding: 48px 0;
+        }
+        .h1 {
+          font-size: 46px;
+          line-height: 1.1;
+          margin: 0 0 12px;
+        }
+        .brand {
+          color: #00b8ff;
+        }
+        .lead {
+          opacity: 0.9;
+          margin: 0 0 18px;
+        }
+        .ctaRow {
+          display: flex;
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+        .btnPrimary {
+          display: inline-block;
+          background: #00b8ff;
+          color: #000;
+          border-radius: 12px;
+          padding: 12px 16px;
+          font-weight: 800;
+          text-decoration: none;
+        }
+
+        .heroImageWrap {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          border-radius: 20px;
+          margin: 40px auto;
+          max-width: 600px;
+          background: radial-gradient(
+            circle at center,
+            rgba(0, 184, 255, 0.08) 0%,
+            transparent 70%
+          );
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6),
+            0 0 35px rgba(0, 184, 255, 0.35);
+        }
+        .heroImage {
+          object-fit: cover;
+          width: 100%;
+          height: auto;
+          transform: scale(1.05);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section {
+          padding: 60px 0;
+        }
+        .sectionDark {
+          background: #0d0d0d;
+        }
+        .sectionTitle {
+          text-align: center;
+          font-size: 32px;
+          margin-bottom: 40px;
+        }
+        .sectionSub {
+          text-align: center;
+          opacity: 0.8;
+          margin-bottom: 40px;
+        }
+
+        .gridCards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 24px;
+          max-width: 1100px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .card {
+          border-radius: 16px;
+          border: 1px solid #27272a;
+          background: rgba(24, 24, 27, 0.4);
+          padding: 20px;
+          transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .card:hover {
+          border-color: rgba(0, 184, 255, 0.5);
+          box-shadow: 0 0 24px rgba(0, 184, 255, 0.2);
+        }
+        .cardTitle {
+          color: #00b8ff;
+          margin-bottom: 10px;
+        }
+        .cardText {
+          opacity: 0.85;
+        }
+        .cardTag {
+          color: #22c55e;
+          font-weight: 600;
+          margin-top: 12px;
+        }
+
+        .promo {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+          align-items: center;
+        }
+        .promoH3 {
+          font-size: 28px;
+          margin: 0 0 8px;
+        }
+        .promoP {
+          opacity: 0.9;
+          margin: 0 0 16px;
+        }
+
+        .footer {
+          margin-top: 60px;
+          padding: 30px 0;
+          border-top: 1px solid #1f2937;
+          opacity: 0.8;
+          font-size: 14px;
+          text-align: center;
+        }
+        .footLink {
+          color: #00b8ff;
+          text-decoration: none;
+          font-weight: 800;
+        }
+
+        /* ---------- Responsive tweaks ---------- */
+        @media (max-width: 980px) {
+          .hero {
+            grid-template-columns: 1fr;
+          }
+          .h1 {
+            font-size: 34px;
+          }
+          .promo {
+            grid-template-columns: 1fr;
+          }
+          .promoVisual {
+            order: -1; /* token above copy on mobile */
+            display: flex;
+            justify-content: center;
+          }
+        }
+      `}</style>
     </div>
   );
 }
