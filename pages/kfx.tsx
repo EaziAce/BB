@@ -335,7 +335,4 @@ function UnlockCard({ phase, title, desc }: { phase: string; title: string; desc
     </div>
   );
 }
-<p className="mt-2 text-xs text-zinc-500">
-  Early Access = interest + whitelist. Purchasing opens in the next phase.
-</p>
 
