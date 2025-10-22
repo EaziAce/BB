@@ -15,12 +15,85 @@ export default function KFXPage() {
         />
         {/* Custom fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Condensed:wght@400;700;800&display=swap"
           rel="stylesheet"
         />
       </Head>
+
+      {/* Top header with glow + responsive */}
+      <header className="kfHeader">
+        <Link href="/" className="kfLogoLink" aria-label="Kickfixx Home">
+          <Image src="/kickfixx-logo-00B8FF.png" alt="Kickfixx" width={140} height={36} priority />
+        </Link>
+
+        <nav className="kfNav">
+          <Link href="/" className="kfNavLink">Home</Link>
+          <Link href="/kfx" className="kfNavLink" aria-current="page">KFX</Link>
+          <Link href="/contact" className="kfNavLink">Contact</Link>
+        </nav>
+
+        <style jsx>{`
+          .kfHeader {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            background: #0A0A0A;
+            border-bottom: 1px solid #1f2937;
+            -webkit-backdrop-filter: saturate(120%) blur(0px);
+            backdrop-filter: saturate(120%) blur(0px);
+          }
+          .kfHeader::before,
+          .kfHeader::after {
+            content: "";
+            position: absolute;
+            height: 18rem;
+            width: 18rem;
+            border-radius: 9999px;
+            filter: blur(48px);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.25;
+          }
+          .kfHeader::before {
+            top: -9rem; left: -6rem;
+            background: radial-gradient(closest-side, #00B8FF, rgba(0,0,0,0));
+          }
+          .kfHeader::after {
+            bottom: -10rem; right: -8rem; opacity: 0.18;
+            background: radial-gradient(closest-side, #00B8FF, rgba(0,0,0,0));
+          }
+          .kfLogoLink { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; outline: none; }
+          .kfNav { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+          .kfNavLink {
+            color: #00B8FF;
+            font-weight: 800;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 10px;
+            transition: box-shadow .18s ease, background-color .18s ease, transform .18s ease;
+          }
+          .kfNavLink:hover, .kfNavLink:focus-visible {
+            box-shadow: 0 0 18px rgba(0,184,255,0.35);
+            background-color: rgba(0,184,255,0.08);
+            transform: translateY(-1px);
+            outline: none;
+          }
+          .kfNavLink[aria-current="page"] {
+            background-color: rgba(0,184,255,0.10);
+            box-shadow: 0 0 14px rgba(0,184,255,0.22) inset;
+          }
+          @media (max-width: 720px) {
+            .kfHeader { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 16px; }
+            .kfNav { justify-content: center; gap: 12px; }
+          }
+        `}</style>
+      </header>
 
       <main
         style={{
@@ -30,41 +103,6 @@ export default function KFXPage() {
             'Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"',
         }}
       >
-        {/* ===== Header (home link + nav) ===== */}
-        <header className="hdr">
-          <Link href="/" className="logoLink" aria-label="Kickfixx home">
-            <Image
-              src="/kickfixx-logo-00B8FF.png"
-              alt="Kickfixx"
-              width={160}
-              height={40}
-              priority
-            />
-          </Link>
-          <nav className="nav">
-            <Link href="/kfx" className="navLink">KFX Token</Link>
-            <Link href="/contact" className="navLink">Contact</Link>
-          </nav>
-          <style jsx>{`
-            .hdr {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              padding: 14px 0;
-              border-bottom: 1px solid #1f2937;
-              max-width: 1120px;
-              margin: 0 auto;
-              padding-left: 24px;
-              padding-right: 24px;
-            }
-            .nav { display: flex; gap: 16px; }
-            .navLink { color: #00b8ff; font-weight: 800; text-decoration: none; }
-            @media (max-width: 768px) {
-              .hdr { padding-left: 16px; padding-right: 16px; }
-            }
-          `}</style>
-        </header>
-
         {/* ===== Section 1: Hero (mobile-optimized) ===== */}
         <section className="heroWrap">
           <div aria-hidden className="bgGlows">
@@ -77,7 +115,7 @@ export default function KFXPage() {
             <div className="tokenWrap">
               <div aria-hidden className="tokenAura" />
               <Image
-                src="/kfx-token.png"   // ensure this is the transparent PNG
+                src="/kfx-token.png"   // transparent token in /public
                 alt="KFX token"
                 fill
                 sizes="(max-width: 768px) 180px, 260px"
@@ -240,7 +278,7 @@ export default function KFXPage() {
               margin-top: 24px; border-radius: 16px;
               border: 1px solid rgba(0,184,255,0.4);
               background: #0b0f12; padding: 20px; text-align: center;
-              box-shadow: 0 0 35px rgba(0,184,255,0.12); /* subtle glow */
+              box-shadow: 0 0 35px rgba(0,184,255,0.12);
             }
             .infoText { color: #e4e4e7; margin: 0; }
             .infoStrong { font-weight: 800; color: #fff; font-family: "Roboto Condensed", Inter, system-ui; }
@@ -409,7 +447,7 @@ export default function KFXPage() {
           `}</style>
         </section>
 
-        {/* ===== Footer (home link lives in header; keep ownership link here too) ===== */}
+        {/* ===== Footer ===== */}
         <footer className="ftr">
           <div>
             <Link href="/ownership" className="navLink" style={{ fontWeight: 800 }}>
@@ -422,6 +460,7 @@ export default function KFXPage() {
               margin-top: 20px; padding: 30px 0; border-top: 1px solid #1f2937;
               opacity: 0.8; font-size: 14px; text-align: center;
             }
+            .navLink { color: #00b8ff; text-decoration: none; }
           `}</style>
         </footer>
       </main>
