@@ -1,7 +1,7 @@
 // pages/kfx.tsx
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
+
 
 export default function KFXPage() {
   return (
@@ -172,7 +172,7 @@ export default function KFXPage() {
             <form
               className="mt-8 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
               method="POST"
-              action="https://formspree.io/f/your_form_id_here"
+              action="https://formspree.io/f/mpwyjqgq"
             >
               <input
                 type="text"
