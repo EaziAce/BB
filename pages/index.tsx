@@ -64,13 +64,22 @@ export default function Home() {
             }}
           >
             Get in touch
-          </Link>
-          <Link
+         <Link
   href="/kfx"
-  className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition"
+  style={{
+    display: "inline-block",
+    background: "#00B8FF",
+    color: "#000",
+    borderRadius: 12,
+    padding: "12px 16px",
+    fontWeight: 800,
+    textDecoration: "none",
+    marginLeft: 12, // so it sits beside the first button
+  }}
 >
   Explore KFX Token
 </Link>
+
 
         </div>
 
