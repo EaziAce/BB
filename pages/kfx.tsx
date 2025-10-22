@@ -335,4 +335,3 @@ function UnlockCard({ phase, title, desc }: { phase: string; title: string; desc
     </div>
   );
 }
-
