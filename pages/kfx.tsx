@@ -12,10 +12,17 @@ export default function KFXPage() {
           name="description"
           content="KFX is the official reward token of Kickfixx — unlocking perks, discounts, and early access to tokenized vending machine ownership."
         />
+        {/* Custom fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Condensed:wght@400;700;800&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      {/* Page wrapper with dark theme */}
-      <main style={{ background: "#0A0A0A", color: "#fff" }}>
+      {/* Page wrapper with dark theme + global font */}
+      <main style={{ background: "#0A0A0A", color: "#fff", fontFamily: `Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"` }}>
         {/* Section 1: Hero */}
         <section style={{ position: "relative", overflow: "hidden" }}>
           {/* glow accents */}
@@ -66,33 +73,47 @@ export default function KFXPage() {
               textAlign: "center",
             }}
           >
+            {/* Token with ambient aura (Option B) */}
             <div
               style={{
                 margin: "0 auto 24px",
-                width: 224,
-                height: 224,
+                width: 260,
+                height: 260,
                 position: "relative",
-                boxShadow: "0 0 30px rgba(0,184,255,0.35)",
-                borderRadius: 16,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              {/* Use fixed width/height for reliability without Tailwind */}
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "radial-gradient(circle at center, rgba(0,184,255,0.25), transparent 70%)",
+                  filter: "blur(40px)",
+                  zIndex: 0,
+                }}
+              />
               <Image
                 src="/kfx-token.png"
                 alt="KFX token"
                 fill
-                sizes="224px"
-                style={{ objectFit: "contain" }}
+                sizes="260px"
+                style={{ objectFit: "contain", position: "relative", zIndex: 1 }}
                 priority
               />
             </div>
 
             <h1
               style={{
+                fontFamily: `"Roboto Condensed", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial`,
                 fontSize: 40,
                 lineHeight: 1.15,
                 fontWeight: 800,
                 margin: 0,
+                letterSpacing: "0.2px",
               }}
             >
               Fuel the Future of Wellness with{" "}
@@ -175,116 +196,119 @@ export default function KFXPage() {
               maxWidth: 1120,
               padding: "0 24px",
               display: "grid",
-              gridTemplateColumns: "1fr",
+              gridTemplateColumns:
+                "minmax(0, 1fr) minmax(0, clamp(340px, 40vw, 520px))",
               gap: 40,
+              alignItems: "center",
             }}
           >
-            {/* switch to two columns on larger screens with CSS clamp */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "minmax(0, 1fr) minmax(0, clamp(340px, 40vw, 520px))",
-                gap: 40,
-                alignItems: "center",
-              }}
-            >
-              {/* left copy */}
-              <div>
-                <h2 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>
-                  What Is KFX? Your Key to the Kickfixx Ecosystem
-                </h2>
-                <p style={{ marginTop: 16, color: "#d4d4d8" }}>
-                  KFX is the{" "}
-                  <span style={{ color: "#fff", fontWeight: 600 }}>
-                    official utility token
-                  </span>{" "}
-                  of Kickfixx. It rewards early supporters, customers, and
-                  future investors for helping us build the world’s first{" "}
-                  <span style={{ color: "#fff", fontWeight: 600 }}>
-                    decentralized wellness network
-                  </span>
-                  .
-                </p>
-                <ul style={{ marginTop: 18, color: "#d4d4d8", paddingLeft: 18 }}>
-                  <li>
-                    <span style={{ color: "#fff", fontWeight: 600 }}>
-                      Earn it
-                    </span>{" "}
-                    via socials, referrals, and purchases (vending coming soon).
-                  </li>
-                  <li>
-                    <span style={{ color: "#fff", fontWeight: 600 }}>
-                      Use it
-                    </span>{" "}
-                    for discounts, free items, exclusive access, and priority to
-                    invest.
-                  </li>
-                  <li>
-                    <span style={{ color: "#fff", fontWeight: 600 }}>
-                      Grow with us
-                    </span>{" "}
-                    as KFX unlocks governance and deeper participation over
-                    time.
-                  </li>
-                </ul>
-
-                <div
-                  style={{
-                    marginTop: 20,
-                    display: "grid",
-                    gridTemplateColumns: "repeat(4, minmax(0,1fr))",
-                    gap: 12,
-                  }}
-                >
-                  <Stat>
-                    ⚡ <span style={{ color: "#a1a1aa" }}>Symbol:</span> KFX
-                  </Stat>
-                  <Stat>
-                    🧱 <span style={{ color: "#a1a1aa" }}>Network:</span> Base
-                    (L2)
-                  </Stat>
-                  <Stat>
-                    💸 <span style={{ color: "#a1a1aa" }}>Fees:</span> Ultra-low
-                  </Stat>
-                  <Stat>
-                    🛠️ <span style={{ color: "#a1a1aa" }}>Use:</span> Rewards →
-                    Access → Governance
-                  </Stat>
-                </div>
-
-                <div style={{ marginTop: 16 }}>
-                  <a
-                    href="#how"
-                    style={{
-                      color: "#00B8FF",
-                      textDecoration: "none",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Learn How KFX Works →
-                  </a>
-                </div>
-              </div>
-
-              {/* right token image */}
-              <div
+            {/* left copy */}
+            <div>
+              <h2
                 style={{
-                  position: "relative",
-                  width: "100%",
-                  height: 420,
-                  boxShadow: "0 0 35px rgba(0,184,255,0.35)",
-                  borderRadius: 16,
+                  fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                  fontSize: 28,
+                  fontWeight: 800,
+                  margin: 0,
+                  letterSpacing: "0.2px",
                 }}
               >
-                <Image
-                  src="/kfx-token.png"
-                  alt="KFX token large"
-                  fill
-                  sizes="420px"
-                  style={{ objectFit: "contain", borderRadius: 16 }}
-                />
+                What Is KFX? Your Key to the Kickfixx Ecosystem
+              </h2>
+              <p style={{ marginTop: 16, color: "#d4d4d8" }}>
+                KFX is the{" "}
+                <span style={{ color: "#fff", fontWeight: 600 }}>
+                  official utility token
+                </span>{" "}
+                of Kickfixx. It rewards early supporters, customers, and future
+                investors for helping us build the world’s first{" "}
+                <span style={{ color: "#fff", fontWeight: 600 }}>
+                  decentralized wellness network
+                </span>
+                .
+              </p>
+              <ul style={{ marginTop: 18, color: "#d4d4d8", paddingLeft: 18 }}>
+                <li>
+                  <span style={{ color: "#fff", fontWeight: 600 }}>Earn it</span>{" "}
+                  via socials, referrals, and purchases (vending coming soon).
+                </li>
+                <li>
+                  <span style={{ color: "#fff", fontWeight: 600 }}>Use it</span>{" "}
+                  for discounts, free items, exclusive access, and priority to
+                  invest.
+                </li>
+                <li>
+                  <span style={{ color: "#fff", fontWeight: 600 }}>
+                    Grow with us
+                  </span>{" "}
+                  as KFX unlocks governance and deeper participation over time.
+                </li>
+              </ul>
+
+              <div
+                style={{
+                  marginTop: 20,
+                  display: "grid",
+                  gridTemplateColumns: "repeat(4, minmax(0,1fr))",
+                  gap: 12,
+                }}
+              >
+                <Stat>
+                  ⚡ <span style={{ color: "#a1a1aa" }}>Symbol:</span> KFX
+                </Stat>
+                <Stat>
+                  🧱 <span style={{ color: "#a1a1aa" }}>Network:</span> Base (L2)
+                </Stat>
+                <Stat>
+                  💸 <span style={{ color: "#a1a1aa" }}>Fees:</span> Ultra-low
+                </Stat>
+                <Stat>
+                  🛠️ <span style={{ color: "#a1a1aa" }}>Use:</span> Rewards →
+                  Access → Governance
+                </Stat>
               </div>
+
+              <div style={{ marginTop: 16 }}>
+                <a
+                  href="#how"
+                  style={{
+                    color: "#00B8FF",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                  }}
+                >
+                  Learn How KFX Works →
+                </a>
+              </div>
+            </div>
+
+            {/* right token image with ambient aura */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: 420,
+              }}
+            >
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "radial-gradient(circle at center, rgba(0,184,255,0.25), transparent 70%)",
+                  filter: "blur(40px)",
+                  zIndex: 0,
+                  borderRadius: 16,
+                }}
+              />
+              <Image
+                src="/kfx-token.png"
+                alt="KFX token large"
+                fill
+                sizes="420px"
+                style={{ objectFit: "contain", position: "relative", zIndex: 1, borderRadius: 16 }}
+              />
             </div>
           </div>
         </section>
@@ -298,13 +322,21 @@ export default function KFXPage() {
           }}
         >
           <div style={{ margin: "0 auto", maxWidth: 960, padding: "0 24px" }}>
-            <h2 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>
+            <h2
+              style={{
+                fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                fontSize: 28,
+                fontWeight: 800,
+                margin: 0,
+              }}
+            >
               Why KFX Exists
             </h2>
             <p style={{ marginTop: 16, color: "#d4d4d8" }}>
               The world is shifting toward transparency, community ownership,
               and decentralized control. Traditional brands keep all the
-              profits. <span style={{ fontWeight: 600, color: "#fff" }}>
+              profits.{" "}
+              <span style={{ fontWeight: 600, color: "#fff" }}>
                 Kickfixx is doing the opposite
               </span>{" "}
               — we’re building an ecosystem where the people who fuel the
@@ -331,7 +363,7 @@ export default function KFXPage() {
               }}
             >
               <p style={{ color: "#e4e4e7", margin: 0 }}>
-                <span style={{ fontWeight: 700, color: "#fff" }}>
+                <span style={{ fontWeight: 800, color: "#fff", fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
                   KFX is not just a loyalty token.
                 </span>{" "}
                 It is your access pass into the ownership era of physical
@@ -344,7 +376,14 @@ export default function KFXPage() {
         {/* Section 4: How to Earn */}
         <section id="how" style={{ padding: "64px 0" }}>
           <div style={{ margin: "0 auto", maxWidth: 1120, padding: "0 24px" }}>
-            <h2 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>
+            <h2
+              style={{
+                fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                fontSize: 28,
+                fontWeight: 800,
+                margin: 0,
+              }}
+            >
               How to Earn KFX
             </h2>
             <p style={{ marginTop: 12, color: "#d4d4d8" }}>
@@ -405,7 +444,14 @@ export default function KFXPage() {
         {/* Section 5: What KFX Unlocks */}
         <section style={{ padding: "64px 0", background: "#0E0F12" }}>
           <div style={{ margin: "0 auto", maxWidth: 1120, padding: "0 24px" }}>
-            <h2 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>
+            <h2
+              style={{
+                fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                fontSize: 28,
+                fontWeight: 800,
+                margin: 0,
+              }}
+            >
               What KFX Unlocks
             </h2>
             <p style={{ marginTop: 12, color: "#d4d4d8" }}>
@@ -453,7 +499,7 @@ export default function KFXPage() {
               }}
             >
               <p style={{ color: "#e4e4e7", margin: 0 }}>
-                <span style={{ fontWeight: 700, color: "#fff" }}>
+                <span style={{ fontWeight: 800, color: "#fff", fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
                   Holding KFX today
                 </span>{" "}
                 gives you early access, priority advantages, and potential
@@ -473,7 +519,14 @@ export default function KFXPage() {
               textAlign: "center",
             }}
           >
-            <h2 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>
+            <h2
+              style={{
+                fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                fontSize: 28,
+                fontWeight: 800,
+                margin: 0,
+              }}
+            >
               Get Your First KFX Tokens — Before Public Release
             </h2>
             <p style={{ marginTop: 12, color: "#d4d4d8" }}>
@@ -527,7 +580,14 @@ export default function KFXPage() {
           }}
         >
           <div style={{ margin: "0 auto", maxWidth: 960, padding: "0 24px", textAlign: "center" }}>
-            <h2 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>
+            <h2
+              style={{
+                fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                fontSize: 28,
+                fontWeight: 800,
+                margin: 0,
+              }}
+            >
               The Future of Wellness Is Decentralized
             </h2>
             <p style={{ marginTop: 16, color: "#d4d4d8" }}>
@@ -546,7 +606,7 @@ export default function KFXPage() {
               }}
             >
               <p style={{ color: "#e4e4e7", margin: 0 }}>
-                <span style={{ fontWeight: 700, color: "#fff" }}>
+                <span style={{ fontWeight: 800, color: "#fff", fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
                   Kickfixx isn’t just launching a product —
                 </span>{" "}
                 we’re building a new economic layer for human performance and
@@ -562,7 +622,14 @@ export default function KFXPage() {
         {/* Section 8: Final CTA */}
         <section style={{ padding: "64px 0" }}>
           <div style={{ margin: "0 auto", maxWidth: 960, padding: "0 24px", textAlign: "center" }}>
-            <h2 style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>
+            <h2
+              style={{
+                fontFamily: `"Roboto Condensed", Inter, system-ui`,
+                fontSize: 28,
+                fontWeight: 800,
+                margin: 0,
+              }}
+            >
               Phase One Is Now Open — Don’t Watch the Future Happen. Own It.
             </h2>
             <ul style={{ marginTop: 16, color: "#d4d4d8", listStyle: "none", padding: 0 }}>
@@ -617,7 +684,16 @@ function Card({
           justifyContent: "space-between",
         }}
       >
-        <h3 style={{ margin: 0, fontWeight: 700 }}>{title}</h3>
+        <h3
+          style={{
+            margin: 0,
+            fontWeight: 800,
+            fontFamily: `"Roboto Condensed", Inter, system-ui`,
+            letterSpacing: "0.2px",
+          }}
+        >
+          {title}
+        </h3>
         <span
           style={{
             fontSize: 12,
@@ -646,10 +722,26 @@ function UnlockCard({
 }) {
   return (
     <div style={cardStyle}>
-      <div style={{ color: "#00B8FF", fontSize: 12, fontWeight: 700 }}>
+      <div
+        style={{
+          color: "#00B8FF",
+          fontSize: 12,
+          fontWeight: 800,
+          fontFamily: `"Roboto Condensed", Inter, system-ui`,
+        }}
+      >
         {phase}
       </div>
-      <div style={{ marginTop: 4, fontWeight: 700 }}>{title}</div>
+      <div
+        style={{
+          marginTop: 4,
+          fontWeight: 800,
+          fontFamily: `"Roboto Condensed", Inter, system-ui`,
+          letterSpacing: "0.2px",
+        }}
+      >
+        {title}
+      </div>
       <p style={{ marginTop: 8, color: "#a1a1aa", fontSize: 14 }}>{desc}</p>
     </div>
   );
@@ -671,9 +763,11 @@ const primaryBtn: React.CSSProperties = {
   borderRadius: 16,
   background: "#00B8FF",
   padding: "12px 20px",
-  fontWeight: 700,
+  fontWeight: 800,
   color: "#000",
   textDecoration: "none",
+  fontFamily: `"Roboto Condensed", Inter, system-ui`,
+  letterSpacing: "0.2px",
 };
 
 /* FAQ inline */
@@ -724,7 +818,15 @@ function FAQ() {
   return (
     <section style={{ padding: "64px 0" }}>
       <div style={{ margin: "0 auto", maxWidth: 960, padding: "0 24px" }}>
-        <h2 style={{ fontSize: 28, fontWeight: 700, textAlign: "center", margin: 0 }}>
+        <h2
+          style={{
+            fontFamily: `"Roboto Condensed", Inter, system-ui`,
+            fontSize: 28,
+            fontWeight: 800,
+            textAlign: "center",
+            margin: 0,
+          }}
+        >
           KFX Early Access — FAQ
         </h2>
         <p style={{ marginTop: 12, color: "#d4d4d8", textAlign: "center" }}>
@@ -751,7 +853,9 @@ function FAQ() {
                   listStyle: "none",
                 }}
               >
-                <span style={{ fontWeight: 700 }}>{item.q}</span>
+                <span style={{ fontWeight: 800, fontFamily: `"Roboto Condensed", Inter, system-ui` }}>
+                  {item.q}
+                </span>
                 <span style={{ color: "#a1a1aa", marginLeft: 16 }} aria-hidden>
                   ＋
                 </span>
