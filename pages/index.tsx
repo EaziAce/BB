@@ -39,6 +39,8 @@ export default function Home() {
           gap: 28,
           alignItems: "center",
           padding: "48px 0",
+          import Link from 'next/link';
+
         }}
       >
         <div>
@@ -63,6 +65,13 @@ export default function Home() {
           >
             Get in touch
           </Link>
+          <Link
+  href="/kfx"
+  className="inline-flex items-center justify-center rounded-2xl bg-[#00B8FF] px-6 py-3 font-semibold text-black hover:opacity-90 transition"
+>
+  Explore KFX Token
+</Link>
+
         </div>
 
     <div
