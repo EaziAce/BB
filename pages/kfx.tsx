@@ -444,6 +444,16 @@ export default function KFXPage() {
         {/* Section 5: What KFX Unlocks */}
         <section style={{ padding: "64px 0", background: "#0E0F12" }}>
           <div style={{ margin: "0 auto", maxWidth: 1120, padding: "0 24px" }}>
+            {/* Soft link to Ownership Token (Coming Soon) */}
+<div style={{ marginTop: 16 }}>
+  <a
+    href="/ownership"
+    style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
+  >
+    Learn about the Ownership Token (Coming Soon) →
+  </a>
+</div>
+
             <h2
               style={{
                 fontFamily: `"Roboto Condensed", Inter, system-ui`,
@@ -832,6 +842,7 @@ function FAQ() {
         <p style={{ marginTop: 12, color: "#d4d4d8", textAlign: "center" }}>
           Clear answers to the most common questions about KFX and the Ownership Token.
         </p>
+        
 
         <div style={{ marginTop: 24, display: "grid", gap: 12 }}>
           {items.map((item, i) => (
@@ -843,6 +854,15 @@ function FAQ() {
                 background: "rgba(24,24,27,0.4)",
                 padding: 20,
               }}
+              <p style={{ marginTop: 12 }}>
+  <a
+    href="/ownership"
+    style={{ color: "#00B8FF", textDecoration: "none", fontWeight: 800 }}
+  >
+    Ownership Token (Coming Soon) →
+  </a>
+</p>
+
             >
               <summary
                 style={{
