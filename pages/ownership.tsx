@@ -11,74 +11,92 @@ export default function OwnershipPage() {
         <title>Ownership Token — Kickfixx</title>
         <meta
           name="description"
-          content="The Ownership Token is a compliant, tokenized way to participate in revenue from real-world Kickfixx vending assets. Join the whitelist for early access."
+          content="The Kickfixx Ownership Token represents compliant, fractional ownership access to revenue-generating healthy vending machines."
         />
         {/* Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Condensed:wght@400;700;800&display=swap"
           rel="stylesheet"
         />
       </Head>
 
-      {/* Header (glow + responsive) */}
+      {/* ===== Top Header (Home / KFX / Contact) with glow + responsive ===== */}
       <header className="kfHeader">
         <Link href="/" className="kfLogoLink" aria-label="Kickfixx Home">
-          <Image src="/kickfixx-logo-00B8FF.png" alt="Kickfixx" width={140} height={36} priority />
+          <Image src="/kickfixx-logo-00B8FF.png" alt="Kickfixx" width={140} height={36} />
         </Link>
 
         <nav className="kfNav">
           <Link href="/" className="kfNavLink">Home</Link>
           <Link href="/kfx" className="kfNavLink">KFX</Link>
-          <Link href="/ownership" className="kfNavLink" aria-current="page">Ownership</Link>
           <Link href="/contact" className="kfNavLink">Contact</Link>
         </nav>
 
         <style jsx>{`
           .kfHeader {
-            position: sticky; top: 0; z-index: 50;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 14px 24px; background: #0A0A0A; border-bottom: 1px solid #1f2937;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            background: #0A0A0A;
+            border-bottom: 1px solid #1f2937;
             -webkit-backdrop-filter: saturate(120%) blur(0px);
             backdrop-filter: saturate(120%) blur(0px);
           }
-          .kfHeader::before, .kfHeader::after {
-            content: ""; position: absolute; height: 18rem; width: 18rem; border-radius: 9999px;
-            filter: blur(48px); pointer-events: none; z-index: -1; opacity: 0.25;
+          .kfHeader::before,
+          .kfHeader::after {
+            content: "";
+            position: absolute;
+            height: 18rem;
+            width: 18rem;
+            border-radius: 9999px;
+            filter: blur(48px);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.25;
           }
-          .kfHeader::before { top: -9rem; left: -6rem; background: radial-gradient(closest-side, #00B8FF, rgba(0,0,0,0)); }
-          .kfHeader::after { bottom: -10rem; right: -8rem; opacity: 0.18; background: radial-gradient(closest-side, #00B8FF, rgba(0,0,0,0)); }
-          .kfLogoLink { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; outline: none; }
+          .kfHeader::before {
+            top: -9rem; left: -6rem;
+            background: radial-gradient(closest-side, #00B8FF, rgba(0,0,0,0));
+          }
+          .kfHeader::after {
+            bottom: -10rem; right: -8rem;
+            background: radial-gradient(closest-side, #00B8FF, rgba(0,0,0,0));
+            opacity: 0.18;
+          }
+          .kfLogoLink { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
           .kfNav { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
           .kfNavLink {
             color: #00B8FF; font-weight: 800; text-decoration: none; padding: 8px 10px; border-radius: 10px;
             transition: box-shadow .18s ease, background-color .18s ease, transform .18s ease;
           }
-          .kfNavLink:hover, .kfNavLink:focus-visible {
-            box-shadow: 0 0 18px rgba(0,184,255,0.35); background-color: rgba(0,184,255,0.08);
-            transform: translateY(-1px); outline: none;
-          }
-          .kfNavLink[aria-current="page"] {
-            background-color: rgba(0,184,255,0.10); box-shadow: 0 0 14px rgba(0,184,255,0.22) inset;
+          .kfNavLink:hover,
+          .kfNavLink:focus-visible {
+            box-shadow: 0 0 18px rgba(0,184,255,0.35);
+            background-color: rgba(0,184,255,0.08);
+            transform: translateY(-1px);
+            outline: none;
           }
           @media (max-width: 720px) {
-            .kfHeader { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 16px; }
+            .kfHeader {
+              flex-direction: column;
+              align-items: stretch;
+              gap: 10px;
+              padding: 12px 16px;
+            }
             .kfNav { justify-content: center; gap: 12px; }
           }
         `}</style>
       </header>
 
-      <main
-        style={{
-          background: "#0A0A0A",
-          color: "#fff",
-          fontFamily:
-            'Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial',
-        }}
-      >
-        {/* ===== Hero ===== */}
-        <section className="heroWrap">
+      <main className="page">
+        {/* ===== HERO ===== */}
+        <section className="hero">
           <div aria-hidden className="bgGlows">
             <div className="glow glowLT" />
             <div className="glow glowRB" />
@@ -98,200 +116,255 @@ export default function OwnershipPage() {
             </div>
 
             <h1 className="heroTitle">
-              The <span className="accent">Ownership Token</span>
+              The <span className="accent">Ownership Token</span> — Fractional Access to Real-World Revenue
             </h1>
+
             <p className="heroLead">
-              A compliant path to participate in revenue from real-world Kickfixx vending assets.
-              Whitelist now for first access when offerings go live.
+              A compliant, tokenized path to participate in revenue from healthy vending machines on the Kickfixx network.
             </p>
 
             <p className="heroSub">
-              Designed to be offered through licensed platforms (e.g., Reg D/CF), with KYC/AML and transparent reporting.
+              Designed for transparency and community alignment — with clear legal rails, reporting, and on-chain access.
             </p>
 
             <div className="ctaRow">
-              <a href="#join" className="primaryBtn">Join the Whitelist</a>
-              <a href="#how" className="ghostBtn">How It Works</a>
+              <a href="#how" className="primaryBtn">How It Works</a>
+              <Link href="/kfx" className="ghostBtn">See KFX (Rewards)</Link>
             </div>
           </div>
-
-          <style jsx>{`
-            .heroWrap { position: relative; overflow: hidden; background: #0a0a0a; }
-            .bgGlows { position: absolute; inset: 0; pointer-events: none; }
-            .glow { position: absolute; height: 24rem; width: 24rem; border-radius: 9999px; filter: blur(64px); }
-            .glowLT { top: -10rem; left: -8rem; opacity: 0.3; background: radial-gradient(closest-side, #00b8ff, rgba(0,0,0,0)); }
-            .glowRB { bottom: -10rem; right: -8rem; opacity: 0.2; background: radial-gradient(closest-side, #00b8ff, rgba(0,0,0,0)); }
-
-            .heroInner { position: relative; margin: 0 auto; max-width: 1120px; padding: 64px 24px 56px; text-align: center; }
-            .tokenWrap { margin: 0 auto 16px; width: 260px; height: 260px; position: relative; display: flex; justify-content: center; align-items: center; }
-            .tokenAura { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,184,255,0.25), transparent 70%); filter: blur(40px); z-index: 0; border-radius: 50%; }
-
-            .heroTitle { margin: 0; font-family: "Roboto Condensed", Inter, system-ui; font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: .2px; }
-            .accent { color: #00b8ff; }
-            .heroLead { margin: 16px auto 8px; max-width: 720px; font-size: 18px; color: #d4d4d8; }
-            .heroSub { margin: 4px auto 0; max-width: 720px; color: #a1a1aa; }
-            .ctaRow { margin-top: 20px; display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-            .primaryBtn { display: inline-flex; align-items: center; justify-content: center; border-radius: 16px; background: #00b8ff; padding: 12px 20px; font-weight: 700; color: #000; text-decoration: none; }
-            .ghostBtn { display: inline-flex; align-items: center; justify-content: center; border-radius: 16px; border: 1px solid #3f3f46; padding: 12px 20px; font-weight: 600; color: #fff; text-decoration: none; }
-
-            @media (max-width: 768px) {
-              .heroInner { padding: 40px 16px 40px; }
-              .tokenWrap { width: 180px; height: 180px; }
-              .heroTitle { font-size: 30px; }
-              .heroLead { font-size: 16px; }
-              .primaryBtn, .ghostBtn { width: 100%; max-width: 420px; }
-            }
-          `}</style>
         </section>
 
-        {/* ===== What is the Ownership Token ===== */}
-        <section className="whatWrap">
-          <div className="whatInner">
-            <h2 className="h2">What Is the Ownership Token?</h2>
-            <p className="p">
-              A security token representing fractional, compliant participation in the revenues of
-              one or more Kickfixx vending machines. Offered via a licensed platform with
-              clear disclosures, KYC/AML, and transparent reporting.
-            </p>
+        {/* ===== WHAT IT IS ===== */}
+        <section className="wrap">
+          <div className="grid grid-2">
+            <div>
+              <h2 className="h2">What Is the Ownership Token?</h2>
+              <p className="p">
+                The Ownership Token is a <span className="em">compliant security token</span> representing fractional
+                ownership interest in a pool of Kickfixx vending machine revenues. It’s separate from{" "}
+                <Link href="/kfx" className="link">KFX (rewards)</Link> and will be offered via a licensed platform
+                with full KYC/AML.
+              </p>
+              <ul className="ul">
+                <li><span className="em">Real-world revenue:</span> backed by sales from placed machines.</li>
+                <li><span className="em">Reg-friendly rails:</span> offered under exemptions (e.g., Reg D/CF) via partners.</li>
+                <li><span className="em">Transparency:</span> standardized reporting, on-chain access, clear terms.</li>
+              </ul>
 
-            <div className="statGrid">
-              <Stat>🧱 <span className="muted">Structure:</span> Reg D / Reg CF (platform-hosted)</Stat>
-              <Stat>🔎 <span className="muted">KYC/AML:</span> Required</Stat>
-              <Stat>📈 <span className="muted">Payouts:</span> Periodic distributions via platform</Stat>
-              <Stat>🗳️ <span className="muted">Governance:</span> Possible location/product votes</Stat>
+              <div className="stats">
+                <Stat>📈 <span className="m">Underlying:</span> Vending Revenue</Stat>
+                <Stat>🛡️ <span className="m">Offering:</span> Reg-compliant (via partners)</Stat>
+                <Stat>🔍 <span className="m">KYC/AML:</span> Required</Stat>
+                <Stat>🧾 <span className="m">Reports:</span> Standardized</Stat>
+              </div>
             </div>
 
-            <div className="infoCard">
-              <p className="infoText">
-                <span className="strong">Note:</span> Availability depends on jurisdiction and investor eligibility.
-                This page is informational and not an offer to sell securities.
+            <div className="tile tokenTile">
+              <div aria-hidden className="tileAura" />
+              <Image
+                src="/ownership-token.png"
+                alt="Ownership Token (large)"
+                fill
+                sizes="(max-width: 768px) 320px, 420px"
+                style={{ objectFit: "contain", position: "relative", zIndex: 1 }}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ===== HOW IT WORKS ===== */}
+        <section id="how" className="wrapAlt">
+          <div className="inner">
+            <h2 className="h2">How It Works</h2>
+            <p className="p">Clean steps from interest to ongoing ownership lifecycle.</p>
+
+            <div className="grid grid-3">
+              <Card title="1) Early Access & Verification" badge="Step 1" detail="Join the list, complete KYC/AML with the offering partner when live." />
+              <Card title="2) Allocation & Purchase" badge="Step 2" detail="Receive your allocation, review the docs, and complete purchase on the partner portal." />
+              <Card title="3) Transparent Reporting" badge="Step 3" detail="Track machine placement progress, sales summaries, and distributions via standardized updates." />
+            </div>
+
+            <div className="notice">
+              <p className="noticeText">
+                <span className="strong">Note:</span> This page is informational and not an offer to sell securities. Any offering will be made
+                only through official documentation on a licensed platform.
               </p>
             </div>
           </div>
-
-          <style jsx>{`
-            .whatWrap { padding: 64px 0; }
-            .whatInner { margin: 0 auto; max-width: 1120px; padding: 0 24px; }
-            .h2 { font-family: "Roboto Condensed", Inter, system-ui; font-size: 28px; font-weight: 800; margin: 0; }
-            .p { margin-top: 12px; color: #d4d4d8; }
-            .statGrid { margin-top: 20px; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; }
-            .muted { color: #a1a1aa; }
-            .infoCard {
-              margin-top: 24px; border-radius: 16px; border: 1px solid rgba(0,184,255,0.4);
-              background: #0b0f12; padding: 20px; text-align: center; box-shadow: 0 0 35px rgba(0,184,255,0.12);
-            }
-            .infoText { color: #e4e4e7; margin: 0; }
-            .strong { font-weight: 800; color: #fff; font-family: "Roboto Condensed", Inter, system-ui; }
-            @media (max-width: 1024px) { .statGrid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-            @media (max-width: 768px) { .whatInner { padding: 0 16px; } .statGrid { grid-template-columns: 1fr; } }
-          `}</style>
         </section>
 
-        {/* ===== How It Works ===== */}
-        <section id="how" className="howWrap">
-          <div className="howInner">
-            <h2 className="h2">How It Works</h2>
-            <div className="stepsGrid">
-              <Card title="1) Join the Whitelist" badge="Now" detail="Provide your email to be notified of the first offering window and eligibility steps." />
-              <Card title="2) KYC/Eligibility" badge="On platform" detail="Complete identity checks and confirm your investor profile where required." />
-              <Card title="3) Review Documents" badge="Before investing" detail="Read disclosures and offering docs on the licensed platform hosting the sale." />
-              <Card title="4) Receive Tokens" badge="Post-purchase" detail="Tokens are issued by the platform and distributions (if any) flow back there." />
-            </div>
-            <p className="sub">
-              KFX holders receive priority access when offerings open.
-              <Link href="/kfx" className="link"> Learn about KFX →</Link>
-            </p>
-          </div>
-
-          <style jsx>{`
-            .howWrap { padding: 64px 0; background: #0E0F12; }
-            .howInner { margin: 0 auto; max-width: 1120px; padding: 0 24px; }
-            .h2 { font-family: "Roboto Condensed", Inter, system-ui; font-size: 28px; font-weight: 800; margin: 0 0 12px; }
-            .stepsGrid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
-            .sub { margin-top: 16px; color: #a1a1aa; }
-            .link { color: #00B8FF; text-decoration: none; font-weight: 700; }
-            @media (max-width: 1024px) { .stepsGrid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-            @media (max-width: 768px) { .howInner { padding: 0 16px; } .stepsGrid { grid-template-columns: 1fr; } }
-          `}</style>
-        </section>
-
-        {/* ===== Benefits ===== */}
-        <section className="benefitWrap">
-          <div className="benefitInner">
-            <h2 className="h2">Potential Benefits</h2>
-            <div className="benefitGrid">
-              <UnlockCard phase="A" title="Real-World Revenues" desc="Backed by physical vending machines with transparent sales reporting." />
-              <UnlockCard phase="B" title="Priority Access" desc="KFX supporters and early whitelisters get earlier allocation windows." />
-              <UnlockCard phase="C" title="Governance Touchpoints" desc="Help influence product mix, locations, and growth paths over time." />
-              <UnlockCard phase="D" title="Simple Distributions" desc="Platform-native statements and (if any) periodic payout handling." />
+        {/* ===== BENEFITS ===== */}
+        <section className="wrap">
+          <div className="inner">
+            <h2 className="h2">Why the Ownership Token?</h2>
+            <div className="grid grid-3">
+              <Card title="Real-World Yield Exposure" badge="Benefit" detail="Potential distributions tied to actual sales at placed machines." />
+              <Card title="Aligned with Community" badge="Benefit" detail="Ownership that grows with network scale, not just brand fandom." />
+              <Card title="On-Chain Access" badge="Benefit" detail="Modern rails for access, with the goal of future secondary liquidity (subject to rules)." />
             </div>
           </div>
-
-          <style jsx>{`
-            .benefitWrap { padding: 64px 0; }
-            .benefitInner { margin: 0 auto; max-width: 1120px; padding: 0 24px; }
-            .h2 { font-family: "Roboto Condensed", Inter, system-ui; font-size: 28px; font-weight: 800; margin: 0; }
-            .benefitGrid { margin-top: 24px; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
-            @media (max-width: 1024px) { .benefitGrid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-            @media (max-width: 768px) { .benefitInner { padding: 0 16px; } .benefitGrid { grid-template-columns: 1fr; } }
-          `}</style>
-        </section>
-
-        {/* ===== Whitelist / Email Capture ===== */}
-        <section id="join" className="joinWrap">
-          <div className="joinInner">
-            <h2 className="h2">Join the Whitelist</h2>
-            <p className="p">Get notified first when the Ownership Token offering window opens.</p>
-
-            <form
-              method="POST"
-              action="https://formspree.io/f/mpwyjqgq"
-              className="form"
-            >
-              <input type="text" name="name" aria-label="First name" placeholder="First name (optional)" className="inp" />
-              <input type="email" name="email" aria-label="Email address" required placeholder="Email address" className="inp" />
-              <button type="submit" className="primaryBtn">Notify Me</button>
-            </form>
-
-            <p className="note">We’ll email you details about timing, eligibility, and platform links.</p>
-          </div>
-
-          <style jsx>{`
-            .joinWrap { padding: 64px 0; background: linear-gradient(to bottom, #0a0a0a 0%, #0e0f12 100%); }
-            .joinInner { margin: 0 auto; max-width: 720px; padding: 0 24px; text-align: center; }
-            .h2 { font-family: "Roboto Condensed", Inter, system-ui; font-size: 28px; font-weight: 800; margin: 0; }
-            .p { margin-top: 12px; color: #d4d4d8; }
-            .form { margin-top: 24px; display: grid; gap: 12px; grid-template-columns: 1fr; }
-            .inp { border-radius: 16px; background: #18181b; border: 1px solid #27272a; padding: 12px 16px; color: #fff; outline: none; }
-            .primaryBtn { display: inline-flex; align-items: center; justify-content: center; border-radius: 16px; background: #00b8ff; padding: 12px 20px; font-weight: 800; color: #000; text-decoration: none; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: 0.2px; }
-            .note { margin-top: 8px; font-size: 12px; color: #71717a; }
-            @media (max-width: 768px) { .joinInner { padding: 0 16px; } }
-          `}</style>
         </section>
 
         {/* ===== FAQ ===== */}
-        <OwnershipFAQ />
+        <section className="wrapAlt">
+          <div className="inner">
+            <h2 className="h2 center">Ownership Token — FAQ</h2>
+            <div className="faqList">
+              {FAQ_ITEMS.map((item, i) => (
+                <details key={i} className="faqItem">
+                  <summary className="faqSummary">
+                    <span className="faqQ">{item.q}</span>
+                    <span className="plus" aria-hidden>＋</span>
+                  </summary>
+                  <p className="faqA">{item.a}</p>
+                </details>
+              ))}
+            </div>
 
-        {/* ===== Footer ===== */}
+            <div className="ctaCenter">
+              <Link href="/contact" className="primaryBtn">Contact Us</Link>
+              <p style={{ marginTop: 12 }}>
+                Prefer perks? <Link href="/kfx" className="link b">Explore KFX →</Link>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== FINAL CTA ===== */}
+        <section className="wrap">
+          <div className="inner center">
+            <h2 className="h2">Be First In Line</h2>
+            <p className="p">Get on the list to receive allocation details as soon as we go live.</p>
+            <div style={{ marginTop: 20 }}>
+              <a href="/contact" className="primaryBtn">Join Early Access</a>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== FOOTER ===== */}
         <footer className="ftr">
           <div>
-            <Link href="/kfx" className="navLink" style={{ fontWeight: 800 }}>
-              Explore KFX (Rewards) →
-            </Link>
+            <Link href="/kfx" className="link b">KFX (Rewards)</Link>
+            <span className="sep">•</span>
+            <Link href="/contact" className="link b">Contact</Link>
           </div>
           © {new Date().getFullYear()} Kickfixx. All rights reserved.
-          <style jsx>{`
-            .ftr { margin-top: 20px; padding: 30px 0; border-top: 1px solid #1f2937; opacity: 0.8; font-size: 14px; text-align: center; }
-            .navLink { color: #00b8ff; text-decoration: none; }
-          `}</style>
         </footer>
       </main>
+
+      <style jsx global>{`
+        :root {
+          --bg: #0A0A0A;
+          --card: rgba(24,24,27,0.55);
+          --border: #27272a;
+          --accent: #00B8FF;
+          --text: #fff;
+          --muted: #d4d4d8;
+          --muter: #a1a1aa;
+        }
+        html, body, #__next { background: var(--bg); color: var(--text); }
+        .page { background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+        .wrap { padding: 64px 0; }
+        .wrapAlt { padding: 64px 0; background: linear-gradient(to bottom, #0a0a0a 0%, #0e0f12 100%); }
+        .inner { margin: 0 auto; max-width: 1120px; padding: 0 24px; }
+        .center { text-align: center; }
+
+        .grid { display: grid; gap: 16px; }
+        .grid-2 { grid-template-columns: minmax(0,1fr) minmax(0, clamp(340px, 40vw, 520px)); align-items: center; }
+        .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+        @media (max-width: 1024px) {
+          .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        }
+        @media (max-width: 768px) {
+          .inner { padding: 0 16px; }
+          .grid-2 { grid-template-columns: 1fr; }
+          .grid-3 { grid-template-columns: 1fr; }
+        }
+
+        .h2 {
+          font-family: "Roboto Condensed", Inter, system-ui;
+          font-size: 28px; font-weight: 800; margin: 0;
+          letter-spacing: .2px;
+        }
+        .p { margin-top: 12px; color: var(--muted); }
+        .em { color: #fff; font-weight: 600; }
+        .ul { margin-top: 16px; color: var(--muted); padding-left: 18px; }
+        .link { color: var(--accent); text-decoration: none; }
+        .link.b { font-weight: 800; }
+
+        /* Hero */
+        .hero { position: relative; overflow: hidden; }
+        .bgGlows { position: absolute; inset: 0; pointer-events: none; }
+        .glow { position: absolute; height: 24rem; width: 24rem; border-radius: 9999px; filter: blur(64px); }
+        .glowLT { top: -10rem; left: -8rem; opacity: .3; background: radial-gradient(closest-side, var(--accent), rgba(0,0,0,0)); }
+        .glowRB { bottom: -10rem; right: -8rem; opacity: .2; background: radial-gradient(closest-side, var(--accent), rgba(0,0,0,0)); }
+
+        .heroInner { position: relative; margin: 0 auto; max-width: 1120px; padding: 56px 24px 48px; text-align: center; }
+        .tokenWrap { margin: 0 auto 12px; width: 260px; height: 260px; position: relative; display: flex; justify-content: center; align-items: center; }
+        .tokenAura { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,184,255,.25), transparent 70%); filter: blur(40px); z-index: 0; border-radius: 50%; }
+
+        .heroTitle { margin: 0; font-family: "Roboto Condensed", Inter, system-ui; font-size: 40px; line-height: 1.15; font-weight: 800; letter-spacing: .2px; }
+        .accent { color: var(--accent); }
+        .heroLead { margin: 16px auto 8px; max-width: 720px; font-size: 18px; color: var(--muted); }
+        .heroSub { margin: 4px auto 0; max-width: 720px; color: var(--muter); }
+        .ctaRow { margin-top: 20px; display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+        .primaryBtn, .ghostBtn {
+          display: inline-flex; align-items: center; justify-content: center; border-radius: 16px; padding: 12px 20px; text-decoration: none;
+        }
+        .primaryBtn { background: var(--accent); color: #000; font-weight: 800; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: .2px; }
+        .ghostBtn { border: 1px solid #3f3f46; color: #fff; font-weight: 600; }
+        @media (max-width: 768px) {
+          .heroInner { padding: 40px 16px 40px; }
+          .tokenWrap { width: 180px; height: 180px; }
+          .heroTitle { font-size: 30px; }
+          .heroLead { font-size: 16px; }
+          .primaryBtn, .ghostBtn { width: 100%; max-width: 420px; }
+        }
+
+        /* Token tile */
+        .tile { position: relative; border-radius: 16px; overflow: hidden; min-height: 420px; background: rgba(24,24,27,0.4); border: 1px solid var(--border); }
+        .tileAura { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,184,255,.25), transparent 70%); filter: blur(40px); z-index: 0; border-radius: 16px; }
+        .tokenTile { height: 420px; }
+        @media (max-width: 768px) {
+          .tokenTile { height: 320px; }
+        }
+
+        /* Notice / info card */
+        .notice, .infoCard {
+          margin-top: 24px; border-radius: 16px;
+          border: 1px solid rgba(0,184,255,0.4);
+          background: #0b0f12; padding: 20px;
+          box-shadow: 0 0 35px rgba(0,184,255,0.12);
+          text-align: center;
+        }
+        .noticeText, .infoText { color: #e4e4e7; margin: 0; }
+        .strong, .infoStrong { font-weight: 800; color: #fff; font-family: "Roboto Condensed", Inter, system-ui; }
+
+        /* FAQ */
+        .faqList { margin-top: 20px; display: grid; gap: 12px; }
+        .faqItem {
+          border-radius: 16px; border: 1px solid var(--border);
+          background: var(--card); padding: 20px;
+          box-shadow: 0 0 35px rgba(0,184,255,0.10);
+        }
+        .faqSummary { display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; }
+        .faqQ { font-weight: 800; font-family: "Roboto Condensed", Inter, system-ui; }
+        .plus { color: var(--muter); margin-left: 16px; transition: transform .2s ease; }
+        .faqItem[open] .plus { transform: rotate(45deg); }
+        .faqA { margin-top: 12px; color: var(--muter); }
+
+        /* Footer */
+        .ftr {
+          margin-top: 20px; padding: 30px 0; border-top: 1px solid #1f2937;
+          opacity: 0.8; font-size: 14px; text-align: center;
+        }
+        .sep { margin: 0 8px; opacity: .5; }
+      `}</style>
     </>
   );
 }
 
-/* ---------- Reusable glowing card styles ---------- */
-
+/* ===== Small reusable cards (glow) ===== */
 const cardStyle: React.CSSProperties = {
   borderRadius: 16,
   border: "1px solid #27272a",
@@ -310,14 +383,12 @@ function Card({ title, badge, detail }: { title: string; badge: string; detail: 
     <div
       style={{ ...cardStyle }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 0 48px rgba(0,184,255,0.18)";
+        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 48px rgba(0,184,255,0.18)";
         (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(0,184,255,0.35)";
         (e.currentTarget as HTMLDivElement).style.transform = "translateY(-2px)";
       }}
       onMouseLeave={(e) => {
-        (e.currentTarget as HTMLDivElement).style.boxShadow =
-          "0 0 35px rgba(0,184,255,0.10)";
+        (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 35px rgba(0,184,255,0.10)";
         (e.currentTarget as HTMLDivElement).style.borderColor = "#27272a";
         (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
       }}
@@ -350,110 +421,30 @@ function Card({ title, badge, detail }: { title: string; badge: string; detail: 
   );
 }
 
-function UnlockCard({ phase, title, desc }: { phase: string; title: string; desc: string }) {
-  return (
-    <div style={{ ...cardStyle }}>
-      <div
-        style={{
-          color: "#00B8FF",
-          fontSize: 12,
-          fontWeight: 800,
-          fontFamily: `"Roboto Condensed", Inter, system-ui`,
-        }}
-      >
-        {phase}
-      </div>
-      <div
-        style={{
-          marginTop: 4,
-          fontWeight: 800,
-          fontFamily: `"Roboto Condensed", Inter, system-ui`,
-          letterSpacing: "0.2px",
-        }}
-      >
-        {title}
-      </div>
-      <p style={{ marginTop: 8, color: "#a1a1aa", fontSize: 14 }}>{desc}</p>
-    </div>
-  );
-}
-
-/* ---------- Ownership FAQ ---------- */
-function OwnershipFAQ() {
-  const items = [
-    {
-      q: "Is this live right now?",
-      a: "Not yet. We’re collecting whitelist interest first. Offerings will launch via a licensed platform with required disclosures.",
-    },
-    {
-      q: "Is the Ownership Token a security?",
-      a: "Yes—this token is intended to be offered as a compliant security (e.g., Reg D/CF) depending on jurisdiction, with KYC/AML and platform custody.",
-    },
-    {
-      q: "Do I need KFX to participate?",
-      a: "KFX isn’t required, but holders get priority access when allocation windows open.",
-    },
-    {
-      q: "How do payouts work?",
-      a: "If and when distributions occur, they’re handled through the platform that hosts the offering, with statements and tax docs provided there.",
-    },
-    {
-      q: "What are the risks?",
-      a: "All investments carry risk, including loss of principal. Read the offering documents carefully and consider your own circumstances.",
-    },
-    {
-      q: "Who can join?",
-      a: "Eligibility varies by region and offering type. The platform will guide you through KYC/AML and any accreditation checks if applicable.",
-    },
-    {
-      q: "Where can I get updates?",
-      a: "Join the whitelist above and follow email updates. We’ll announce timelines and platform links as they’re finalized.",
-    },
-  ];
-
-  return (
-    <section className="faqWrap">
-      <div className="faqInner">
-        <h2 className="h2 center">Ownership Token — FAQ</h2>
-        <p className="p center">Straightforward answers about eligibility, compliance, and access.</p>
-
-        <div className="faqList">
-          {items.map((item, i) => (
-            <details key={i} className="faqItem">
-              <summary className="faqSummary">
-                <span className="faqQ">{item.q}</span>
-                <span className="plus" aria-hidden>＋</span>
-              </summary>
-              <p className="faqA">{item.a}</p>
-            </details>
-          ))}
-        </div>
-
-        <div className="faqCta">
-          <a href="#join" className="primaryBtn">Join the Whitelist</a>
-        </div>
-      </div>
-
-      <style jsx>{`
-        .faqWrap { padding: 64px 0; }
-        .faqInner { margin: 0 auto; max-width: 960px; padding: 0 24px; }
-        .h2 { font-family: "Roboto Condensed", Inter, system-ui; font-size: 28px; font-weight: 800; margin: 0; }
-        .center { text-align: center; }
-        .p { margin-top: 12px; color: #d4d4d8; }
-        .faqList { margin-top: 24px; display: grid; gap: 12px; }
-        .faqItem {
-          border-radius: 16px; border: 1px solid #27272a; background: rgba(24,24,27,0.4); padding: 20px;
-          box-shadow: 0 0 35px rgba(0,184,255,0.10);
-        }
-        .faqSummary { display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; }
-        .faqQ { font-weight: 800; font-family: "Roboto Condensed", Inter, system-ui; }
-        .plus { color: #a1a1aa; margin-left: 16px; transition: transform .2s ease; }
-        .faqItem[open] .plus { transform: rotate(45deg); }
-        .faqA { margin-top: 12px; color: #a1a1aa; }
-        .faqCta { margin-top: 24px; text-align: center; }
-        .primaryBtn { display: inline-flex; align-items: center; justify-content: center; border-radius: 16px; background: #00b8ff; padding: 12px 20px; font-weight: 800; color: #000; text-decoration: none; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: 0.2px; }
-        @media (max-width: 768px) { .faqInner { padding: 0 16px; } }
-      `}</style>
-    </section>
-  );
-}
+/* ===== FAQ data ===== */
+const FAQ_ITEMS = [
+  {
+    q: "Is this live now?",
+    a: "Not yet. This page previews the compliant offering to come. Join Early Access to be notified first when allocations open.",
+  },
+  {
+    q: "How is this different from KFX?",
+    a: "KFX is a utility/reward token for perks and access. The Ownership Token is a compliant security representing fractional exposure to vending revenue.",
+  },
+  {
+    q: "Will I need KYC/AML?",
+    a: "Yes. Verification is required by the licensed offering platform prior to any purchase.",
+  },
+  {
+    q: "Where do distributions come from?",
+    a: "From sales revenue of deployed machines in the relevant pool, net of fees and per the offering documents.",
+  },
+  {
+    q: "What are the fees?",
+    a: "Any platform, admin, or servicing fees will be disclosed in the official offering documents before you invest.",
+  },
+  {
+    q: "Can I sell my tokens later?",
+    a: "Any potential transferability or secondary trading would be subject to applicable regulations and platform rules. Details will be disclosed at launch.",
+  },
+];
