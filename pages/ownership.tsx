@@ -136,7 +136,7 @@ export default function OwnershipPage() {
 
         {/* ===== WHAT IT IS ===== */}
         <section className="wrap">
-          <div className="grid grid-2">
+          <div className="inner grid grid-2">
             <div>
               <h2 className="h2">What Is the Ownership Token?</h2>
               <p className="p">
