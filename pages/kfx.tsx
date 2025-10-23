@@ -28,15 +28,27 @@ export default function KFXPage() {
           <div className="glow glow-bottom" />
         </div>
 
-        {/* Header — identical to index */}
+        {/* Header — identical to index (legacyBehavior anchors for Pages Router) */}
         <header className="header">
-          <Link href="/" className="logoLink" aria-label="Kickfixx Home">
-            <Image src="/kickfixx-logo-00B8FF.png" alt="Kickfixx" width={160} height={40} priority />
+          <Link href="/" legacyBehavior>
+            <a className="logoLink" aria-label="Kickfixx Home">
+              <Image
+                src="/kickfixx-logo-00B8FF.png"
+                alt="Kickfixx"
+                width={160}
+                height={40}
+                priority
+              />
+            </a>
           </Link>
 
           <nav className="nav">
-            <Link href="/kfx" className="navLink">KFX Token</Link>
-            <Link href="/contact" className="navLink">Contact</Link>
+            <Link href="/kfx" legacyBehavior>
+              <a className="navLink">KFX Token</a>
+            </Link>
+            <Link href="/contact" legacyBehavior>
+              <a className="navLink">Contact</a>
+            </Link>
           </nav>
         </header>
 
@@ -188,7 +200,9 @@ export default function KFXPage() {
           <div style={{ textAlign: "center", marginTop: 24 }}>
             <a href="#join" className="btnPrimary">Join Early Access</a>
             <p style={{ marginTop: 12 }}>
-              <Link href="/ownership" className="footLink">Ownership Token (Coming Soon) →</Link>
+              <Link href="/ownership" legacyBehavior>
+                <a className="footLink">Ownership Token (Coming Soon) →</a>
+              </Link>
             </p>
           </div>
         </section>
@@ -209,7 +223,9 @@ export default function KFXPage() {
         {/* Footer — same look/feel */}
         <footer className="footer">
           <div style={{ marginBottom: 8 }}>
-            <Link href="/ownership" className="footLink">Ownership Token (Coming Soon)</Link>
+            <Link href="/ownership" legacyBehavior>
+              <a className="footLink">Ownership Token (Coming Soon)</a>
+            </Link>
           </div>
           © {new Date().getFullYear()} Kickfixx. All rights reserved.
         </footer>
@@ -296,3 +312,4 @@ const FAQ_ITEMS = [
   { q: "Which network will KFX use?", a: "We plan to launch on Base (Coinbase L2) for fast, low-fee transactions and smooth onboarding." },
   { q: "Are these tokens securities?", a: "KFX is a utility/rewards token (not an investment). The Ownership Token will be structured as a compliant security via a licensed platform." },
 ];
+
