@@ -14,8 +14,8 @@ export default function OwnershipPage() {
           content="The Kickfixx Ownership Token represents compliant, fractional ownership access to revenue-generating healthy vending machines."
         />
         {/* Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Condensed:wght@400;700;800&display=swap"
           rel="stylesheet"
@@ -136,7 +136,7 @@ export default function OwnershipPage() {
 
         {/* ===== WHAT IT IS ===== */}
         <section className="wrap">
-          <div className="inner grid grid-2">
+          <div className="grid grid-2">
             <div>
               <h2 className="h2">What Is the Ownership Token?</h2>
               <p className="p">
@@ -236,7 +236,7 @@ export default function OwnershipPage() {
             <h2 className="h2">Be First In Line</h2>
             <p className="p">Get on the list to receive allocation details as soon as we go live.</p>
             <div style={{ marginTop: 20 }}>
-              <a href="/contact" className="primaryBtn">Join Early Access</a>
+              <Link href="/contact" className="primaryBtn">Join Early Access</Link>
             </div>
           </div>
         </section>
@@ -252,6 +252,7 @@ export default function OwnershipPage() {
         </footer>
       </main>
 
+      {/* ====== Global styles ====== */}
       <style jsx global>{`
         :root {
           --bg: #0A0A0A;
