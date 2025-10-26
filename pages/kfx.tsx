@@ -11,7 +11,7 @@ export default function KFXPage() {
         <title>KFX — Kickfixx Reward Token</title>
         <meta
           name="description"
-          content="KFX is the official reward token of Kickfixx — unlocking perks, discounts, and early access to tokenized vending machine ownership."
+          content="KFX is the Kickfixx reward token — perks, access, and first-in-line advantages as we build a decentralized wellness network."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -22,37 +22,31 @@ export default function KFXPage() {
       </Head>
 
       <div className="page">
-        {/* index-style background glows */}
+        {/* ambient glows */}
         <div className="hero-glows" aria-hidden>
           <div className="glow glow-top" />
           <div className="glow glow-bottom" />
         </div>
 
-        {/* Header — same look/feel as index */}
+        {/* header (matches index) */}
         <header className="header">
           <Link href="/" className="logoLink" aria-label="Kickfixx Home">
-            <Image
-              src="/kickfixx-logo-00B8FF.png"
-              alt="Kickfixx"
-              width={160}
-              height={40}
-              priority
-            />
+            <Image src="/kickfixx-logo-00B8FF.png" alt="Kickfixx" width={160} height={40} priority />
           </Link>
-
           <nav className="nav">
             <Link href="/kfx" className="navLink">KFX Token</Link>
+            <Link href="/ownership" className="navLink">Ownership</Link>
             <Link href="/contact" className="navLink">Contact</Link>
           </nav>
         </header>
 
-        {/* HERO (2-col; stacks on mobile) */}
+        {/* hero */}
         <section className="hero">
-          <div>
+          <div className="heroLeft">
             <div className="tokenWrap">
               <div aria-hidden className="tokenAura" />
               <Image
-                src="/kfx-token.png"      // ensure transparent PNG in /public
+                src="/kfx-token.png"  // transparent PNG in /public
                 alt="KFX token"
                 fill
                 sizes="(max-width: 768px) 180px, 260px"
@@ -62,28 +56,26 @@ export default function KFXPage() {
             </div>
 
             <h1 className="h1">
-              Fuel the Future of Wellness with <span className="brand">KFX</span>
+              Perks Today. <span className="brand">Priority</span> Tomorrow.
             </h1>
             <p className="lead">
-              The official reward token of Kickfixx — unlocking exclusive perks, discounts,
-              and early access to revenue-generating vending machine ownership.
+              KFX is the Kickfixx reward token — designed for access, bonuses, and an early seat
+              as real machines roll out.
             </p>
             <p className="sub">
-              This isn’t just a rewards point. It’s your entry into the world’s first
-              decentralized wellness ecosystem.
+              Clean token mechanics, no hype. Earn it, use it, and stay first in line as the network scales.
             </p>
 
             <div className="ctaRow">
               <a href="#join" className="btnPrimary">Join Early Access</a>
-              <a href="#how" className="btnGhost">Learn How It Works</a>
+              <a href="#how" className="btnGhost">How It Works</a>
             </div>
 
-            <p className="note">Early Access = interest + whitelist. Purchasing opens in the next phase.</p>
+            <p className="note">Early Access = interest + whitelist. Purchases open in a later phase.</p>
           </div>
 
-          {/* Right visual tile to mirror index */}
+          {/* right visual tile */}
           <div className="heroImageWrap">
-            <div aria-hidden className="heroTileAura" />
             <Image
               src="/kfx-token.png"
               alt="KFX token large"
@@ -95,37 +87,35 @@ export default function KFXPage() {
           </div>
         </section>
 
-        {/* WHAT IS KFX */}
+        {/* what is kfx */}
         <section className="section">
-          <h2 className="sectionTitle">What Is KFX? Your Key to the Kickfixx Ecosystem</h2>
-          <p className="sectionSub">
-            KFX is the <strong>official utility token</strong> of Kickfixx. Earn it, use it, and grow with the network.
-          </p>
+          <h2 className="sectionTitle">What Is KFX?</h2>
+          <p className="sectionSub">Your key to Kickfixx access — simple, useful, and built for real-world rollout.</p>
 
           <div className="gridCards">
             <div className="card">
               <h3 className="cardTitle">Earn It</h3>
-              <p className="cardText">Socials, referrals, and purchases (vending coming soon).</p>
+              <p className="cardText">Socials, referrals, and (soon) purchases at Kickfixx machines.</p>
             </div>
             <div className="card">
               <h3 className="cardTitle">Use It</h3>
-              <p className="cardText">Discounts, free items, exclusive access, and priority to invest.</p>
+              <p className="cardText">Redeem for perks, discounts, exclusive access, and priority.</p>
             </div>
             <div className="card">
               <h3 className="cardTitle">Grow With Us</h3>
-              <p className="cardText">KFX unlocks governance and deeper participation over time.</p>
+              <p className="cardText">As the network expands, KFX unlocks deeper utility.</p>
             </div>
             <div className="card">
-              <h3 className="cardTitle">Stats</h3>
+              <h3 className="cardTitle">Specs</h3>
               <p className="cardText">⚡ Symbol: KFX</p>
               <p className="cardText">🧱 Network: Base (L2)</p>
               <p className="cardText">💸 Fees: Ultra-low</p>
-              <p className="cardText">🛠️ Use: Rewards → Access → Governance</p>
+              <p className="cardText">🛠️ Path: Rewards → Access → Governance</p>
             </div>
           </div>
         </section>
 
-        {/* HOW TO EARN */}
+        {/* how to earn */}
         <section id="how" className="section sectionDark">
           <h2 className="sectionTitle">How to Earn KFX</h2>
           <p className="sectionSub">Start earning now — no machine required.</p>
@@ -134,7 +124,7 @@ export default function KFXPage() {
             <div className="card"><h3 className="cardTitle">Join Early Access</h3><p className="cardText">+50 KFX on signup</p></div>
             <div className="card"><h3 className="cardTitle">Engage on Socials</h3><p className="cardText">+5–20 KFX per action</p></div>
             <div className="card"><h3 className="cardTitle">Refer a Location</h3><p className="cardText">+500 KFX after acceptance</p></div>
-            <div className="card"><h3 className="cardTitle">Pay with Crypto</h3><p className="cardText">+10% KFX bonus on purchases</p></div>
+            <div className="card"><h3 className="cardTitle">Pay with Crypto</h3><p className="cardText">+10% KFX bonus (on launch)</p></div>
           </div>
 
           <div style={{ textAlign: "center", marginTop: 24 }}>
@@ -142,32 +132,29 @@ export default function KFXPage() {
           </div>
         </section>
 
-        {/* WHAT KFX UNLOCKS */}
+        {/* unlocks */}
         <section className="section">
           <h2 className="sectionTitle">What KFX Unlocks</h2>
-          <p className="sectionSub">KFX grows in power as the network expands.</p>
+          <p className="sectionSub">Utility that compounds with network scale.</p>
 
           <div className="gridCards">
             <div className="card"><h3 className="cardTitle">Phase 1</h3><p className="cardText">Rewards & Discounts</p></div>
             <div className="card"><h3 className="cardTitle">Phase 2</h3><p className="cardText">Early Investor Access</p></div>
             <div className="card"><h3 className="cardTitle">Phase 3</h3><p className="cardText">Governance & Voting</p></div>
-            <div className="card"><h3 className="cardTitle">Phase 4</h3><p className="cardText">Revenue Participation</p></div>
+            <div className="card"><h3 className="cardTitle">Phase 4</h3><p className="cardText">Path to revenue participation</p></div>
           </div>
 
           <div className="infoCard">
             <p className="infoText">
-              <strong className="infoStrong">Holding KFX today</strong> gives you early access, priority advantages,
-              and potential future ownership of revenue-generating assets.
+              <strong className="infoStrong">Holding KFX now</strong> = priority perks as machines go live.
             </p>
           </div>
         </section>
 
-        {/* EARLY ACCESS FORM */}
+        {/* early access capture */}
         <section id="join" className="section">
-          <h2 className="sectionTitle">Get Your First KFX Tokens — Before Public Release</h2>
-          <p className="sectionSub">
-            Founding members receive bonus KFX, priority access to vending ownership rounds, and insider updates.
-          </p>
+          <h2 className="sectionTitle">Get Your First KFX — Before Public Release</h2>
+          <p className="sectionSub">Founding members get bonus KFX and first rights to future access.</p>
 
           <form method="POST" action="https://formspree.io/f/mpwyjqgq" className="form">
             <input type="text" name="name" aria-label="First name" placeholder="First name (optional)" className="inp" />
@@ -175,12 +162,12 @@ export default function KFXPage() {
             <button type="submit" className="btnPrimary wide">Claim My Early Access Spot</button>
           </form>
 
-          <p className="note">✅ You’re in! You’ll receive updates on token activation and bonus opportunities.</p>
+          <p className="note">✅ You’re in. We’ll update you on activation and bonuses.</p>
         </section>
 
-        {/* FAQ */}
+        {/* faq */}
         <section className="section sectionDark">
-          <h2 className="sectionTitle">KFX Early Access — FAQ</h2>
+          <h2 className="sectionTitle">KFX — FAQ</h2>
           <div className="gridFaq">
             {FAQ_ITEMS.map((item, i) => (
               <details key={i} className="faqItem">
@@ -196,25 +183,13 @@ export default function KFXPage() {
           <div style={{ textAlign: "center", marginTop: 24 }}>
             <a href="#join" className="btnPrimary">Join Early Access</a>
             <p style={{ marginTop: 12 }}>
-              <Link href="/ownership" className="footLink">Ownership Token (Coming Soon) →</Link>
+              Prefer regulated ownership?{" "}
+              <Link href="/ownership" className="footLink">See the Ownership Token →</Link>
             </p>
           </div>
         </section>
 
-        {/* FINAL CTA */}
-        <section className="section">
-          <h2 className="sectionTitle">Phase One Is Now Open — Don’t Watch the Future Happen. Own It.</h2>
-          <ul className="sectionSub" style={{ listStyle: "none", padding: 0 }}>
-            <li>• Bonus KFX tokens for founding members</li>
-            <li>• Early access to tokenized vending ownership rounds</li>
-            <li>• Priority in future governance</li>
-          </ul>
-          <div style={{ textAlign: "center", marginTop: 24 }}>
-            <a href="#join" className="btnPrimary">Join Kickfixx Phase One</a>
-          </div>
-        </section>
-
-        {/* Footer — same as index */}
+        {/* footer */}
         <footer className="footer">
           <div style={{ marginBottom: 8 }}>
             <Link href="/ownership" className="footLink">Ownership Token (Coming Soon)</Link>
@@ -223,14 +198,13 @@ export default function KFXPage() {
         </footer>
       </div>
 
-      {/* styled-jsx — mirrors index rules */}
+      {/* styled-jsx */}
       <style jsx>{`
-        .page { max-width: 1160px; margin: 0 auto; padding: 20px; position: relative; color: #fff; background: #0a0a0a; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-
+        .page { max-width: 1160px; margin: 0 auto; padding: 20px; position: relative; color: #fff; }
         .hero-glows { position: fixed; inset: 0; pointer-events: none; z-index: -1; }
         .glow { position: absolute; height: 24rem; width: 24rem; border-radius: 9999px; filter: blur(60px); }
-        .glow-top { top: -160px; left: -128px; opacity: .3; background: radial-gradient(closest-side, #00b8ff, transparent); }
-        .glow-bottom { bottom: -160px; right: -128px; opacity: .2; background: radial-gradient(closest-side, #00b8ff, transparent); }
+        .glow-top { top: -160px; left: -128px; opacity: .3; background: radial-gradient(closest-side, #00b8ff, rgba(0,0,0,0)); }
+        .glow-bottom { bottom: -160px; right: -128px; opacity: .2; background: radial-gradient(closest-side, #00b8ff, rgba(0,0,0,0)); }
 
         .header { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid #1f2937; }
         .logoLink { display: inline-flex; align-items: center; }
@@ -240,29 +214,23 @@ export default function KFXPage() {
         .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; padding: 48px 0; }
         .h1 { font-size: 46px; line-height: 1.1; margin: 0 0 12px; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: .2px; }
         .brand { color: #00b8ff; }
-        .lead { opacity: .9; margin: 0 0 8px; }
-        .sub { color: #a1a1aa; margin: 0 0 12px; }
+        .lead { opacity: .9; margin: 0 0 8px; max-width: 56ch; }
+        .sub { color: #a1a1aa; margin: 0 0 12px; max-width: 60ch; }
         .ctaRow { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0 6px; }
-        .btnPrimary { display: inline-block; background: #00b8ff; color: #000; border-radius: 12px; padding: 12px 16px; font-weight: 800; text-decoration: none; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: .2px; }
+        .btnPrimary { display: inline-block; background: #00b8ff; color: #000; border-radius: 12px; padding: 12px 16px; font-weight: 800; text-decoration: none; }
         .btnGhost { display: inline-block; border: 1px solid #3f3f46; color: #fff; border-radius: 12px; padding: 12px 16px; font-weight: 600; text-decoration: none; }
         .note { font-size: 12px; color: #71717a; margin-top: 8px; }
 
-        .heroImageWrap {
-          position: relative; display: flex; justify-content: center; align-items: center;
-          overflow: hidden; border-radius: 20px; margin: 40px auto; max-width: 600px;
-          background: radial-gradient(circle at center, rgba(0,184,255,.08) 0%, transparent 70%);
-          box-shadow: 0 8px 24px rgba(0,0,0,.6), 0 0 35px rgba(0,184,255,.35);
-        }
+        .heroImageWrap { position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 20px; margin: 40px auto; max-width: 600px; background: radial-gradient(circle at center, rgba(0,184,255,.08) 0%, transparent 70%); box-shadow: 0 8px 24px rgba(0,0,0,.6), 0 0 35px rgba(0,184,255,.35); }
         .heroImage { width: 100%; height: auto; transform: scale(1.02); }
         .contain { object-fit: contain; }
-        .heroTileAura { position: absolute; inset: 0; filter: blur(32px); }
 
         .tokenWrap { margin: 0 0 16px; width: 260px; height: 260px; position: relative; }
         .tokenAura { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,184,255,.25), transparent 70%); filter: blur(40px); border-radius: 50%; }
 
         .section { padding: 60px 0; }
         .sectionDark { background: #0d0d0d; }
-        .sectionTitle { text-align: center; font-size: 32px; margin-bottom: 16px; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: .2px; }
+        .sectionTitle { text-align: center; font-size: 32px; margin-bottom: 16px; font-family: "Roboto Condensed", Inter, system-ui; font-weight: 800; letter-spacing: .2px; }
         .sectionSub { text-align: center; opacity: .85; margin-bottom: 32px; }
 
         .gridCards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; text-align: center; }
@@ -300,24 +268,9 @@ export default function KFXPage() {
 }
 
 const FAQ_ITEMS = [
-  {
-    q: "Can I buy tokens right now?",
-    a: "Not yet. This is the Early Access phase for interest and whitelist allocation. Purchases will open in the next phase. Early members get bonus KFX and first rights to invest.",
-  },
-  {
-    q: "What’s the difference between KFX and the Ownership Token?",
-    a: "KFX is a reward/utility token used for perks, access, and engagement. The Ownership Token is a regulated asset representing fractional machine ownership with revenue payouts. KFX holders get priority access when Ownership Tokens go live.",
-  },
-  {
-    q: "Do I need a crypto wallet today?",
-    a: "No. You can join Early Access with just an email. We’ll guide you to set up a wallet before distribution.",
-  },
-  {
-    q: "Which network will KFX use?",
-    a: "We plan to launch on Base (Coinbase L2) for fast, low-fee transactions and smooth onboarding.",
-  },
-  {
-    q: "Are these tokens securities?",
-    a: "KFX is a utility/rewards token (not an investment). The Ownership Token will be structured as a compliant security via a licensed platform.",
-  },
+  { q: "Can I buy KFX now?", a: "Not yet. This is Early Access (interest + whitelist). Purchases open in a later phase." },
+  { q: "KFX vs Ownership Token?", a: "KFX = rewards & access. Ownership Token = regulated security tied to machine revenue (via partners)." },
+  { q: "Do I need a wallet today?", a: "No. Email is fine for Early Access. We’ll guide you before distribution." },
+  { q: "Which network?", a: "Base (L2) for low fees and smooth onboarding." },
+  { q: "Is KFX a security?", a: "KFX is a utility token. The Ownership Token is a compliant security offered via licensed platforms." },
 ];
