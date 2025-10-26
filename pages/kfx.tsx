@@ -1,8 +1,8 @@
 // pages/kfx.tsx
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export default function KFXPage() {
   return (
@@ -22,43 +22,37 @@ export default function KFXPage() {
       </Head>
 
       <div className="page">
-        {/* background glows like index */}
+        {/* index-style background glows */}
         <div className="hero-glows" aria-hidden>
           <div className="glow glow-top" />
           <div className="glow glow-bottom" />
         </div>
 
-        {/* Header — identical to index (legacyBehavior anchors for Pages Router) */}
+        {/* Header — same look/feel as index */}
         <header className="header">
-          <Link href="/" legacyBehavior>
-            <a className="logoLink" aria-label="Kickfixx Home">
-              <Image
-                src="/kickfixx-logo-00B8FF.png"
-                alt="Kickfixx"
-                width={160}
-                height={40}
-                priority
-              />
-            </a>
+          <Link href="/" className="logoLink" aria-label="Kickfixx Home">
+            <Image
+              src="/kickfixx-logo-00B8FF.png"
+              alt="Kickfixx"
+              width={160}
+              height={40}
+              priority
+            />
           </Link>
 
           <nav className="nav">
-            <Link href="/kfx" legacyBehavior>
-              <a className="navLink">KFX Token</a>
-            </Link>
-            <Link href="/contact" legacyBehavior>
-              <a className="navLink">Contact</a>
-            </Link>
+            <Link href="/kfx" className="navLink">KFX Token</Link>
+            <Link href="/contact" className="navLink">Contact</Link>
           </nav>
         </header>
 
-        {/* HERO */}
+        {/* HERO (2-col; stacks on mobile) */}
         <section className="hero">
           <div>
             <div className="tokenWrap">
               <div aria-hidden className="tokenAura" />
               <Image
-                src="/kfx-token.png"
+                src="/kfx-token.png"      // ensure transparent PNG in /public
                 alt="KFX token"
                 fill
                 sizes="(max-width: 768px) 180px, 260px"
@@ -75,7 +69,8 @@ export default function KFXPage() {
               and early access to revenue-generating vending machine ownership.
             </p>
             <p className="sub">
-              This isn’t just a rewards point. It’s your entry into the world’s first decentralized wellness ecosystem.
+              This isn’t just a rewards point. It’s your entry into the world’s first
+              decentralized wellness ecosystem.
             </p>
 
             <div className="ctaRow">
@@ -83,12 +78,10 @@ export default function KFXPage() {
               <a href="#how" className="btnGhost">Learn How It Works</a>
             </div>
 
-            <p className="note">
-              Early Access = interest + whitelist. Purchasing opens in the next phase.
-            </p>
+            <p className="note">Early Access = interest + whitelist. Purchasing opens in the next phase.</p>
           </div>
 
-          {/* Right visual mirrors index layout */}
+          {/* Right visual tile to mirror index */}
           <div className="heroImageWrap">
             <div aria-hidden className="heroTileAura" />
             <Image
@@ -163,7 +156,8 @@ export default function KFXPage() {
 
           <div className="infoCard">
             <p className="infoText">
-              <strong className="infoStrong">Holding KFX today</strong> gives you early access, priority advantages, and potential future ownership of revenue-generating assets.
+              <strong className="infoStrong">Holding KFX today</strong> gives you early access, priority advantages,
+              and potential future ownership of revenue-generating assets.
             </p>
           </div>
         </section>
@@ -171,7 +165,9 @@ export default function KFXPage() {
         {/* EARLY ACCESS FORM */}
         <section id="join" className="section">
           <h2 className="sectionTitle">Get Your First KFX Tokens — Before Public Release</h2>
-          <p className="sectionSub">Founding members receive bonus KFX, priority access to vending ownership rounds, and insider updates.</p>
+          <p className="sectionSub">
+            Founding members receive bonus KFX, priority access to vending ownership rounds, and insider updates.
+          </p>
 
           <form method="POST" action="https://formspree.io/f/mpwyjqgq" className="form">
             <input type="text" name="name" aria-label="First name" placeholder="First name (optional)" className="inp" />
@@ -200,9 +196,7 @@ export default function KFXPage() {
           <div style={{ textAlign: "center", marginTop: 24 }}>
             <a href="#join" className="btnPrimary">Join Early Access</a>
             <p style={{ marginTop: 12 }}>
-              <Link href="/ownership" legacyBehavior>
-                <a className="footLink">Ownership Token (Coming Soon) →</a>
-              </Link>
+              <Link href="/ownership" className="footLink">Ownership Token (Coming Soon) →</Link>
             </p>
           </div>
         </section>
@@ -220,19 +214,19 @@ export default function KFXPage() {
           </div>
         </section>
 
-        {/* Footer — same look/feel */}
+        {/* Footer — same as index */}
         <footer className="footer">
           <div style={{ marginBottom: 8 }}>
-            <Link href="/ownership" legacyBehavior>
-              <a className="footLink">Ownership Token (Coming Soon)</a>
-            </Link>
+            <Link href="/ownership" className="footLink">Ownership Token (Coming Soon)</Link>
           </div>
           © {new Date().getFullYear()} Kickfixx. All rights reserved.
         </footer>
       </div>
 
+      {/* styled-jsx — mirrors index rules */}
       <style jsx>{`
-        .page { max-width: 1160px; margin: 0 auto; padding: 20px; position: relative; }
+        .page { max-width: 1160px; margin: 0 auto; padding: 20px; position: relative; color: #fff; background: #0a0a0a; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
         .hero-glows { position: fixed; inset: 0; pointer-events: none; z-index: -1; }
         .glow { position: absolute; height: 24rem; width: 24rem; border-radius: 9999px; filter: blur(60px); }
         .glow-top { top: -160px; left: -128px; opacity: .3; background: radial-gradient(closest-side, #00b8ff, transparent); }
@@ -244,12 +238,12 @@ export default function KFXPage() {
         .navLink { color: #00b8ff; font-weight: 800; text-decoration: none; }
 
         .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: center; padding: 48px 0; }
-        .h1 { font-size: 46px; line-height: 1.1; margin: 0 0 12px; }
+        .h1 { font-size: 46px; line-height: 1.1; margin: 0 0 12px; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: .2px; }
         .brand { color: #00b8ff; }
         .lead { opacity: .9; margin: 0 0 8px; }
         .sub { color: #a1a1aa; margin: 0 0 12px; }
         .ctaRow { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0 6px; }
-        .btnPrimary { display: inline-block; background: #00b8ff; color: #000; border-radius: 12px; padding: 12px 16px; font-weight: 800; text-decoration: none; }
+        .btnPrimary { display: inline-block; background: #00b8ff; color: #000; border-radius: 12px; padding: 12px 16px; font-weight: 800; text-decoration: none; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: .2px; }
         .btnGhost { display: inline-block; border: 1px solid #3f3f46; color: #fff; border-radius: 12px; padding: 12px 16px; font-weight: 600; text-decoration: none; }
         .note { font-size: 12px; color: #71717a; margin-top: 8px; }
 
@@ -268,7 +262,7 @@ export default function KFXPage() {
 
         .section { padding: 60px 0; }
         .sectionDark { background: #0d0d0d; }
-        .sectionTitle { text-align: center; font-size: 32px; margin-bottom: 16px; }
+        .sectionTitle { text-align: center; font-size: 32px; margin-bottom: 16px; font-family: "Roboto Condensed", Inter, system-ui; letter-spacing: .2px; }
         .sectionSub { text-align: center; opacity: .85; margin-bottom: 32px; }
 
         .gridCards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; text-align: center; }
@@ -306,10 +300,24 @@ export default function KFXPage() {
 }
 
 const FAQ_ITEMS = [
-  { q: "Can I buy tokens right now?", a: "Not yet. This is the Early Access phase for interest and whitelist allocation. Purchases will open in the next phase. Early members get bonus KFX and first rights to invest." },
-  { q: "What’s the difference between KFX and the Ownership Token?", a: "KFX is a reward/utility token used for perks, access, and engagement. The Ownership Token is a regulated asset representing fractional machine ownership with revenue payouts. KFX holders get priority access when Ownership Tokens go live." },
-  { q: "Do I need a crypto wallet today?", a: "No. You can join Early Access with just an email. We’ll guide you to set up a wallet before distribution." },
-  { q: "Which network will KFX use?", a: "We plan to launch on Base (Coinbase L2) for fast, low-fee transactions and smooth onboarding." },
-  { q: "Are these tokens securities?", a: "KFX is a utility/rewards token (not an investment). The Ownership Token will be structured as a compliant security via a licensed platform." },
+  {
+    q: "Can I buy tokens right now?",
+    a: "Not yet. This is the Early Access phase for interest and whitelist allocation. Purchases will open in the next phase. Early members get bonus KFX and first rights to invest.",
+  },
+  {
+    q: "What’s the difference between KFX and the Ownership Token?",
+    a: "KFX is a reward/utility token used for perks, access, and engagement. The Ownership Token is a regulated asset representing fractional machine ownership with revenue payouts. KFX holders get priority access when Ownership Tokens go live.",
+  },
+  {
+    q: "Do I need a crypto wallet today?",
+    a: "No. You can join Early Access with just an email. We’ll guide you to set up a wallet before distribution.",
+  },
+  {
+    q: "Which network will KFX use?",
+    a: "We plan to launch on Base (Coinbase L2) for fast, low-fee transactions and smooth onboarding.",
+  },
+  {
+    q: "Are these tokens securities?",
+    a: "KFX is a utility/rewards token (not an investment). The Ownership Token will be structured as a compliant security via a licensed platform.",
+  },
 ];
-
