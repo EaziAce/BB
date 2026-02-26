@@ -41,10 +41,10 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact — Kickfixx</title>
+        <title>Placement & Contact — Kickfixx | DFW</title>
         <meta
           name="description"
-          content="Partner with Kickfixx. Placement, partnerships, and investor inquiries for a decentralized wellness network."
+          content="Request vending placement with Kickfixx. Clean, cashless, fully managed vending for apartments, offices, and high-traffic locations across Dallas–Fort Worth."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -55,13 +55,13 @@ export default function ContactPage() {
       </Head>
 
       <div className="page">
-        {/* ambient glows (same vibe as index) */}
+        {/* ambient glows */}
         <div className="hero-glows" aria-hidden>
           <div className="glow glow-top" />
           <div className="glow glow-bottom" />
         </div>
 
-        {/* Header (matches index) */}
+        {/* header (matches index) */}
         <header className="header">
           <Link href="/" className="logoLink" aria-label="Kickfixx Home">
             <Image
@@ -73,11 +73,8 @@ export default function ContactPage() {
             />
           </Link>
           <nav className="nav">
-            <Link href="/kfx" className="navLink">
-              KFX Token
-            </Link>
-            <Link href="/ownership" className="navLink">
-              Ownership
+            <Link href="/contact" className="navLink">
+              Placement
             </Link>
             <Link href="/contact" className="navLink">
               Contact
@@ -85,25 +82,30 @@ export default function ContactPage() {
           </nav>
         </header>
 
-        {/* Hero / Intro copy with brand tone */}
+        {/* hero */}
         <section className="hero">
           <div className="heroLeft">
             <h1 className="h1">
-              Let’s Build the <span className="brand">Ownership</span> Era
+              Request <span className="brand">Placement</span>
             </h1>
+
             <p className="lead">
-              We’re wiring a decentralized wellness network — clean machines,
-              clean reporting, clean economics. If you can help place, partner,
-              or scale, you’re our kind of human.
+              Clean. Cashless. Fully managed vending for apartments, offices, and high-traffic
+              locations.
             </p>
+
+            <p className="sub">
+              Serving Dallas–Fort Worth (DFW). Tell us about your location and we’ll reply with
+              placement options.
+            </p>
+
             <ul className="bullets">
-              <li>Site placement & partnerships</li>
-              <li>Institutional & community investors</li>
-              <li>Suppliers & brand collabs</li>
+              <li>No-cost install (qualified locations)</li>
+              <li>We restock + maintain</li>
+              <li>Modern card & mobile payments</li>
             </ul>
           </div>
 
-          {/* Right-side visual (soft glow tile) */}
           <div className="heroImageWrap">
             <Image
               src="/vending-mockup.png"
@@ -116,13 +118,13 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Form card */}
+        {/* form */}
         <section className="section">
           <div className="formCard">
             <h2 className="formTitle">Start the convo</h2>
             <p className="formSub">
-              Tell us where you fit — placement, capital, or collaboration. We’ll
-              reply fast. The future won’t build itself.
+              Share your address/city, type of site (apartment, office, gym, etc.), and estimated
+              foot traffic. We’ll respond with the best placement model for your location.
             </p>
 
             <form onSubmit={handleSubmit} className="form">
@@ -156,7 +158,7 @@ export default function ContactPage() {
                 id="message"
                 name="message"
                 required
-                placeholder="Where do you want to plug in? Placement, partnerships, investing, or something new?"
+                placeholder="City/area (DFW), type of location, estimated traffic, and anything you want stocked."
                 className="textarea"
               />
 
@@ -164,7 +166,7 @@ export default function ContactPage() {
               <input
                 type="hidden"
                 name="_subject"
-                value="New message from kickfixx.com"
+                value="New placement inquiry from kickfixx.com"
               />
               <input
                 type="text"
@@ -174,36 +176,31 @@ export default function ContactPage() {
                 style={{ display: "none" }}
               />
 
-              <button type="submit" className="btnPrimary wide" disabled={loading}>
+              <button
+                type="submit"
+                className="btnPrimary wide"
+                disabled={loading}
+              >
                 {loading ? "Sending..." : "Send"}
               </button>
 
-              {ok && (
-                <div className="alert ok">
-                  ✅ Message sent. We’ll reply shortly.
-                </div>
-              )}
-              {err && (
-                <div className="alert err">
-                  ⚠️ Something went sideways. Please try again.
-                </div>
-              )}
+              {ok && <div className="alert ok">✅ Message sent. We’ll reply shortly.</div>}
+              {err && <div className="alert err">⚠️ Something went sideways. Please try again.</div>}
             </form>
           </div>
         </section>
 
-        {/* Footer (simple, consistent) */}
+        {/* footer */}
         <footer className="footer">
           <div style={{ marginBottom: 8 }}>
-            <Link href="/ownership" className="footLink">
-              Ownership Token (Coming Soon)
+            <Link href="/" className="footLink">
+              Back to Home
             </Link>
           </div>
           © {new Date().getFullYear()} Kickfixx. All rights reserved.
         </footer>
       </div>
 
-      {/* styled-jsx */}
       <style jsx>{`
         .page {
           max-width: 1160px;
@@ -281,8 +278,13 @@ export default function ContactPage() {
         }
         .lead {
           opacity: 0.9;
-          margin: 0 0 16px;
-          max-width: 48ch;
+          margin: 0 0 10px;
+          max-width: 52ch;
+        }
+        .sub {
+          color: #a1a1aa;
+          margin: 0 0 14px;
+          max-width: 60ch;
         }
         .bullets {
           margin: 0;
@@ -373,6 +375,12 @@ export default function ContactPage() {
           font-weight: 800;
           text-decoration: none;
           text-align: center;
+          border: none;
+          cursor: pointer;
+        }
+        .btnPrimary:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
         }
         .wide {
           width: 100%;
@@ -407,7 +415,6 @@ export default function ContactPage() {
           font-weight: 800;
         }
 
-        /* responsive */
         @media (max-width: 980px) {
           .hero {
             grid-template-columns: 1fr;
